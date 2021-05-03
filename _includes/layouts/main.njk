@@ -1,0 +1,19 @@
+<!doctype html>
+<html lang="sv">
+  <head>
+    <meta charset="utf-8">
+    <title>{{ title }} - Barlingshult</title>
+    <link rel="stylesheet" href="{{ '/main.css' | url }}">
+    <script type="module" src="{{ '/js/date-header.js' | url }}"></script>
+  </head>
+  <body>
+    <div class="site-header">
+      <a href="/">
+        <strong>Barlingshult</strong>
+      </a>
+    </div>
+    <main>
+      {{ content | safe }}
+    </main>
+  </body>
+</html>

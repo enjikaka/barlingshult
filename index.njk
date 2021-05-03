@@ -1,0 +1,8 @@
+---
+title: Start
+layout: layouts/main.njk
+---
+
+{% set postslist = search.pages("type=posts") %}
+
+{% include "templates/posts-list.njk" %}
