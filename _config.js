@@ -4,6 +4,7 @@ import postcss from "https://deno.land/x/lume@v0.18.1/plugins/postcss.js";
 
 const site = lume({
   location: new URL("https://example.com/"),
+  slugifyUrls: false
 });
 
 site.ignore("README.md");
