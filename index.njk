@@ -2,7 +2,14 @@
 title: Start
 layout: layouts/main.njk
 ---
+<section class="start-feed">
+  <h1>Inlägg</h1>
 
-{% set postslist = search.pages("type=posts") %}
+  {% set postslist = search.pages("type=posts") %}
+  {% include "templates/posts-list.njk" %}
 
-{% include "templates/posts-list.njk" %}
+  <h1>Historier</h1>
+
+  {% set postslist = search.pages("type=historic-sources") %}
+  {% include "templates/posts-list.njk" %}
+</section>

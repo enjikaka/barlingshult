@@ -11,7 +11,7 @@ function DateHeader({ datetime }) {
       color: white;
       position: relative;
       display: flex;
-      flex-direction: column;
+      flex-direction: row nowrap;
       text-align: center;
     }
 
@@ -30,15 +30,21 @@ function DateHeader({ datetime }) {
 
     time {
       text-transform: capitalize;
+      font-variant: small-caps slashed-zero;
+      font-size: 0.8em;
+      flex: 1;
+      text-align: left;
+      padding: 0 0.5em;
     }
 
     time:last-child {
-      font-size: 0.8em;
+      text-align: right;
     }
   `;
 
   html`
     <time></time>
+    <slot></slot>
     <time></time>
   `;
 

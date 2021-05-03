@@ -2,6 +2,7 @@ html,
 body {
   background-color: #E7EAF3;
   margin: 0;
+  font-family: 'Averia Serif Libre', cursive;
 }
 
 .site-header {
@@ -22,4 +23,12 @@ body {
 main {
   margin: 0 auto;
   max-width: 125ex;
+}
+
+.start-feed {
+  margin: 2rem;
+  background-color: white;
+  border-radius: 6px;
+  overflow: hidden;
+  padding: 1rem;
 }

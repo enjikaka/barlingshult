@@ -19,7 +19,10 @@ site.filter(
   "head",
   (array = [], n) => (n < 0) ? array.slice(n) : array.slice(0, n),
 );
+
 site.filter("min", (...numbers) => Math.min.apply(null, numbers));
+site.filter("toISODate", date => new Date(date).toISOString().split('T')[0]);
+
 site.filter(
   "stringify",
   x => JSON.stringify(x, null, 4),

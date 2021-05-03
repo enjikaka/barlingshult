@@ -9,8 +9,12 @@
       {% endif %}
     </a>
 
+    {% if post.data.author %}
+      <span>{{ post.data.author }}</span>,
+    {% endif %}
+
     <time class="postList-date" datetime="{{ post.data.date | date('DATETIME') }}">
-      {{ post.data.date | date('HUMAN_DATE') }}
+      {{ post.data.date | toISODate }}
     </time>
 
     {% for tag in post.data.tags %}

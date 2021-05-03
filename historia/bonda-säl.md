@@ -1,7 +1,8 @@
 ---
 title: "Bonda-Säl"
+date: 1966-01-01
+author: Arvid Ernvik
 ---
-<h3>Bonda-Säl</h3>
 <p>
   Vad han egentligen hette, minns ingen längre. Han bodde i Sälarbyn, Silbodal och torde ha sett dagens ljus omkring år 1760.
 </p>
@@ -30,3 +31,4 @@ lägga det i tunnan, för det är i kläderna han gör det (trolldomen).</q>
 <p>
   Hon gjorde så, och med detsamma fick hon ro. Men ektunnan rullade iväg till lantmätaren på kvällen.
 </p>
+<cite><a href="https://www.isof.se/om-oss/publikationer/institutets-publikationer/folkminnen/2016-10-13-folkminnen-fran-glaskogen.html">Folkminnen från Glaskogen - Del 2</a></cite>

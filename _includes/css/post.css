@@ -8,8 +8,25 @@
 .post h1 {
   text-align: center;
   font-size: 1.4em;
+  margin-top: 1rem;
 }
 
 .post-body {
   padding: 1rem;
+}
+
+date-header {
+  margin-bottom: 3.5rem;
+}
+
+q {
+  display: block;
+  font-style: italic;
+  margin-left: 3ex;
+  padding: 0.2em 0;
+}
+
+q::before {
+  content: "—";
+  padding-right: 1ex;
 }
