@@ -26,7 +26,7 @@ function optimizeImages (site, page) {
     `);
 
     for (let size of sizes) {
-      site.addEventListener('afterBuild', `npx @squoosh/cli --resize "{width: ${size}}" --mozjpeg auto --avif auto --webp auto --output-dir _site/${dirPath} -s '.${size}' _site${path}`);
+      site.addEventListener('afterBuild', `npx @squoosh/cli --resize \"{width: ${size}}\" --mozjpeg auto --avif auto --webp auto --output-dir _site/${dirPath} -s '.${size}' _site${path}`);
     }
   }
 }
