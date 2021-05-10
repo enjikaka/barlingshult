@@ -30,3 +30,8 @@ q::before {
   content: "—";
   padding-right: 1ex;
 }
+
+picture, img {
+  display: block;
+  width: 100%;
+}
