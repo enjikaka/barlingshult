@@ -7,14 +7,13 @@ on:
     branches: [main]
 
 jobs:
-  test:
+  build:
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
         os: [ubuntu-latest]
         deno:
           [1.9.1]
-
     steps:
       - name: Checkout repo
         uses: actions/checkout@v2
