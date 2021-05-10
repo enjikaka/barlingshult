@@ -10,6 +10,8 @@ function optimizeImages (site, page) {
     const [, rawWidth] = tag.match(/width="(\d+)"/i);
     const width = parseInt(rawWidth, 10);
 
+    const [, alt] = tag.match(/alt="(.+)"/i);
+
     const sizes = [width, width * 1.5, width * 2];
 
     const avifSrcset = sizes.map(size => `${path.replace('.jpg', `.${size}.avif`)} ${size}w`).join(', ');
@@ -21,7 +23,7 @@ function optimizeImages (site, page) {
         <source srcset="${avifSrcset}" type="image/avif">
         <source srcset="${webpSrcset}" type="image/webp">
         <source srcset="${jpgSrcset}" type="image/jpg">
-        <img src="${path}" loading="lazy" decoding="async" sizes="${width}w">
+        <img src="${path}" alt="${alt}" width="${width}" loading="lazy" decoding="async" sizes="${width}w">
       </picture>
     `);
 
