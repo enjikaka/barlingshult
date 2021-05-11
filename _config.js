@@ -1,7 +1,7 @@
 import lume from "https://deno.land/x/lume@v0.18.1/mod.js";
 import date from "https://deno.land/x/lume@v0.18.1/plugins/date.js";
 import postcss from "https://deno.land/x/lume@v0.18.1/plugins/postcss.js";
-import squoosh from './squoosh.js';
+import squoosh from './squoosh-2.js';
 
 const site = lume({
   location: new URL("https://example.com/"),
@@ -15,6 +15,7 @@ site.copy("_includes/img", "img");
 
 site.use(postcss());
 site.use(date());
+site.use(squoosh());
 
 site.filter(
   "head",
@@ -28,7 +29,5 @@ site.filter(
   "stringify",
   x => JSON.stringify(x, null, 4),
 );
-
-squoosh(site);
 
 export default site;

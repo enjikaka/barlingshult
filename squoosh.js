@@ -29,13 +29,13 @@ function optimizeImages (site, page) {
 
     for (let size of sizes) {
       // Works locally on macOS but fails on Netlify and Github Actions (ubuntu)
-      // site.addEventListener('afterBuild', `npx @squoosh/cli --resize '"{width: ${size}}"' --mozjpeg auto --avif auto --webp auto --output-dir _site/${dirPath} -s '.${size}' _site${path}`);
+      site.addEventListener('afterBuild', `npx @squoosh/cli --resize '"{width: ${size}}"' --mozjpeg auto --avif auto --webp auto --output-dir _site/${dirPath} -s '.${size}' _site${path}`);
       // Maybe this works on ubuntu?
-      site.addEventListener('afterBuild', `npx @squoosh/cli --resize '{"width": ${size}}' --mozjpeg auto --avif auto --webp auto --output-dir _site/${dirPath} -s '.${size}' _site${path}`);
+      // site.addEventListener('afterBuild', `npx @squoosh/cli --resize '{"width": ${size}}' --mozjpeg auto --avif auto --webp auto --output-dir _site/${dirPath} -s '.${size}' _site${path}`);
     }
   }
 }
 
-export default function (site) {
-  site.process(['.html'], page => optimizeImages(site, page));
+export default function () {
+  return site => site.process(['.html'], page => optimizeImages(site, page));
 }
