@@ -41,14 +41,15 @@ function generatePictureElement (site, document, image) {
       })
     : [width, width * 1.5, width * 2];
 
-    console.log(Deno.env.get('version'));
+    const isMacOS = Deno.env.get('_system_type') === 'Darwin';
 
     squooshTasks.push(
     ...sizes.map(size => site.addEventListener('afterBuild',
-      // macOS
-      `npx @squoosh/cli --resize '"{\"width\": ${size}}"' --mozjpeg auto --avif auto --webp auto --output-dir ${dirname(url).slice(1)}/ -s "_${size}w" ${url.slice(1)}`
-      // Linux
-      // `npx @squoosh/cli --resize '{"width": ${size}}' --mozjpeg auto --avif auto --webp auto --output-dir ${dirname(url).slice(1)}/ -s "_${size}w" ${url.slice(1)}`
+      isMacOS ?
+        // macOS needs double wrapping around object.
+        `npx @squoosh/cli --resize '"{width: ${size}}"' --mozjpeg auto --avif auto --webp auto --output-dir ${dirname(url).slice(1)}/ -s "_${size}w" ${url.slice(1)}` :
+        // Linux fails on double wrapping, do single.
+        `npx @squoosh/cli --resize '{width: ${size}}' --mozjpeg auto --avif auto --webp auto --output-dir ${dirname(url).slice(1)}/ -s "_${size}w" ${url.slice(1)}`
     ))
   );
 
