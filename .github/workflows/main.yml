@@ -26,6 +26,7 @@ jobs:
         with:
           node-version: '16'
       - run: make build
+      - run: ls -la _site/img
       - name: Deploy to Netlify
         uses: nwtgck/actions-netlify@v1.2
         with:
