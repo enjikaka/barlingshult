@@ -44,7 +44,6 @@ function DateHeader({ datetime }) {
 
   html`
     <time></time>
-    <slot></slot>
     <time></time>
   `;
 

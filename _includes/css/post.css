@@ -1,8 +1,8 @@
 .post {
   margin: 2rem;
   background-color: white;
-  border-radius: 6px;
   overflow: hidden;
+  border: 1px solid #888;
 }
 
 .post h1 {
@@ -11,12 +11,13 @@
   margin-top: 1rem;
 }
 
-.post-body {
-  padding: 1rem;
+.post-body,
+footer {
+  padding: 0 1rem;
 }
 
 date-header {
-  margin-bottom: 3.5rem;
+  margin-bottom: 2rem;
 }
 
 q {
@@ -34,6 +35,19 @@ q::before {
 picture,
 img {
   display: block;
-  max-width: 100%;
-  margin: 0 auto;
+  max-width: 90%;
+  margin: 2rem auto;
+  user-select: none;
+  pointer-events: none;
+}
+
+img {
+  box-shadow: 0 2px 4px black;
+  border: 10px solid white;
+}
+
+.post footer {
+  background-color: #ddd;
+  text-align: center;
+  padding: 1rem 0;
 }
