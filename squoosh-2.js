@@ -1,6 +1,6 @@
-import { posix, dirname} from "https://deno.land/x/lume@v0.19.0/deps/path.js";
-import { DOMParser } from "https://deno.land/x/lume@v0.19.0/deps/dom.js";
-import { documentToString } from "https://deno.land/x/lume@v0.19.0/utils.js";
+import { posix, dirname} from "https://deno.land/x/lume@v0.20.0/deps/path.js";
+import { DOMParser } from "https://deno.land/x/lume@v0.20.0/deps/dom.js";
+import { documentToString } from "https://deno.land/x/lume@v0.20.0/utils.js";
 
 const squooshTasks = [];
 

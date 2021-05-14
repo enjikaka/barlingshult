@@ -1,21 +1,29 @@
-import lume from "https://deno.land/x/lume@v0.18.1/mod.js";
-import date from "https://deno.land/x/lume@v0.18.1/plugins/date.js";
-import postcss from "https://deno.land/x/lume@v0.18.1/plugins/postcss.js";
+import lume from "https://deno.land/x/lume@v0.20.0/mod.js";
+import date from "https://deno.land/x/lume@v0.20.0/plugins/date.js";
+import postcss from "https://deno.land/x/lume@v0.20.0/plugins/postcss.js";
+import terser from "https://deno.land/x/lume@v0.20.0/plugins/terser.js";
+
 import squoosh from './squoosh-2.js';
 
 const site = lume({
-  location: new URL("https://example.com/"),
+  location: new URL("https://barlingshult.se/"),
   slugifyUrls: false
 });
 
 site.ignore("README.md");
-site.copy("_includes/js", "js");
-site.copy("_includes/css", "css");
 site.copy("_includes/img", "img");
 
 site.use(postcss());
+site.use(terser());
 site.use(date());
 site.use(squoosh());
+
+/*
+site.loadAssets([".js"], textLoader);
+site.process([".js"], page => {
+  console.log(page.src.path + page.src.ext + ' -> ' + page.dest.path + page.dest.ext);
+});
+*/
 
 site.filter(
   "head",

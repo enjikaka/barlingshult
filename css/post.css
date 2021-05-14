@@ -46,8 +46,9 @@ img {
   border: 10px solid white;
 }
 
+.post header,
 .post footer {
-  background-color: #ddd;
+  background-color: #eee;
   text-align: center;
   padding: 1rem 0;
 }
