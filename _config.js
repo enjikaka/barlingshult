@@ -11,7 +11,6 @@ const site = lume({
 });
 
 site.ignore("README.md");
-site.copy("_includes/img", "img");
 
 site.use(postcss());
 site.use(terser());
