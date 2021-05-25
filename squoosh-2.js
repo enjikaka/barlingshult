@@ -40,31 +40,32 @@ async function generatePictureElement (site, document, image) {
       })
     : [width, width * 1.5, width * 2];
 
-  const isMacOS = Deno.env.get('_system_type') === 'Darwin';
+    const tasks = await Promise.all(
+      sizes.map(async size => {
+        const isMacOS = Deno.env.get('_system_type') === 'Darwin';
 
-  const targetPath = posix.relative(
-    site.options.location.pathname,
-    `/_site/${url}`
-  );
-  const targetExists = await exists(targetPath);
+        const cachePath = posix.relative(
+          site.options.location.pathname,
+          `/_cache/${url}`.replace('.jpg', `_${size}w.jpg`)
+        );
 
+        const cachePathExists = await exists(cachePath);
 
-  const cachedEntryPath = posix.relative(
-    site.options.location.pathname,
-    `/_img-build-cache/${url}`
-  );
-  const cachedEntryExists = await exists(cachedEntryPath);
+        if (cachePathExists) {
+          return undefined;
+        }
 
-  if (!targetExists && !cachedEntryExists) {
-    squooshTasks.push(
-      ...sizes.map(size => isMacOS ?
-        // macOS needs double wrapping around object.
-        `npx @squoosh/cli --resize '"{width: ${size}}"' --mozjpeg auto --avif auto --webp auto --output-dir _site/${dirname(url)}/ -s '_${size}w' ${url}` :
-        // Linux fails on double wrapping, do single.
-        `npx @squoosh/cli --resize '{width: ${size}}' --mozjpeg auto --avif auto --webp auto --output-dir _site/${dirname(url)}/ -s '_${size}w' ${url}`
-      )
+        return isMacOS ?
+          // macOS needs double wrapping around object.
+          `npx @squoosh/cli --resize '"{width: ${size}}"' --mozjpeg auto --avif auto --webp auto --output-dir _cache/${dirname(url)}/ -s '_${size}w' ${url}` :
+          // Linux fails on double wrapping, do single.
+          `npx @squoosh/cli --resize '{width: ${size}}' --mozjpeg auto --avif auto --webp auto --output-dir _cache/${dirname(url)}/ -s '_${size}w' ${url}`;
+      })
     );
-  }
+
+    squooshTasks.push(
+      ...tasks.filter(Boolean)
+    );
 
   const picture = document.createElement('picture');
 
@@ -115,8 +116,8 @@ export default function () {
 
     site.addEventListener('afterBuild', () => {
       // Spread so they run in series, parallel will freeze your computer. :)
-      site.script('image-optimizer', ...squooshTasks);
-      site.run("image-optimizer");
+      site.script('image-optimizer', ...squooshTasks, 'cp -r _cache/img _site/');
+      site.run('image-optimizer');
     });
   };
 }

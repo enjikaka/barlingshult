@@ -6,11 +6,11 @@ import terser from "https://deno.land/x/lume@v0.20.0/plugins/terser.js";
 import squoosh from './squoosh-2.js';
 
 const site = lume({
-  location: new URL("https://barlingshult.se/"),
+  location: new URL('https://barlingshult.se/'),
   slugifyUrls: false
 });
 
-site.ignore("README.md");
+site.ignore('README.md');
 
 site.use(postcss());
 site.use(terser());
@@ -25,15 +25,15 @@ site.process([".js"], page => {
 */
 
 site.filter(
-  "head",
+  'head',
   (array = [], n) => (n < 0) ? array.slice(n) : array.slice(0, n),
 );
 
-site.filter("min", (...numbers) => Math.min.apply(null, numbers));
-site.filter("toISODate", date => new Date(date).toISOString().split('T')[0]);
+site.filter('min', (...numbers) => Math.min.apply(null, numbers));
+site.filter('toISODate', date => new Date(date).toISOString().split('T')[0]);
 
 site.filter(
-  "stringify",
+  'stringify',
   x => JSON.stringify(x, null, 4),
 );
 

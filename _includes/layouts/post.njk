@@ -5,10 +5,6 @@ bodyClass: body-post
 <script type="module" src="{{ '/js/local-date.js' | url }}"></script>
 <link rel="stylesheet" href="{{ '/css/post.css' | url }}">
 <article class="post">
-  <header>
-    <local-date datetime="{{ date | date('DATETIME') }}"><local-date>
-  </header>
-
   <h1 class="post-title">{{ title }}</h1>
 
   <nav class="post-tags">
@@ -26,5 +22,6 @@ bodyClass: body-post
     {% if author %}
       Skrivet av {{ author }}
     {% endif %}
+    <local-date datetime="{{ date | date('DATETIME') }}"></local-date>
   </footer>
 </article>

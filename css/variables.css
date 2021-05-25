@@ -1,0 +1,10 @@
+:root {
+  --app-bg: #FAF5EE;
+  --dark: #5B3C5C;
+  --light: #FAF5EE;
+  --action-color: #8180C3;
+  --action-text: #94647C;
+  --title-text: #DAA4B6;
+  --gr: 1.61803398875;
+  --gr-rem: calc(1rem * var(--gr));
+}

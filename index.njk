@@ -2,18 +2,23 @@
 title: Start
 layout: layouts/main.njk
 ---
-<section class="start-feed">
-  <h1>Inlägg</h1>
-
-  {% set postslist = search.pages("type=posts") %}
-  {% include "templates/posts-list.njk" %}
-
-  <h1>Historier</h1>
-
-  {% set postslist = search.pages("type=historic-sources") %}
-  {% include "templates/posts-list.njk" %}
-
-  <br><br>
-
-  <a name="windy-webcam-timelapse-player" data-id="1603222616" data-play="month" href="https://windy.com/webcams/1603222616" target="_blank">Arjang › East: Barlingshult</a><script async type="text/javascript" src="https://webcams.windy.com/webcams/public/embed/script/player.js"></script>
-</section>
+<div class="feeds">
+  <section class="post-feed">
+    <h1>Blogginlägg</h1>
+    <div class="feed-columns">
+      {% set postslist = search.pages("type=posts") %}
+      {% include "templates/posts-list.njk" %}
+    </div>
+  </section>
+  <section class="post-feed">
+    <h1>Historier</h1>
+    <div class="feed-columns">
+      {% set postslist = search.pages("type=historic-sources") %}
+      {% include "templates/posts-list.njk" %}
+    </div>
+  </section>
+  <section class="webcam">
+    <h1>Webbkamera</h1>
+    <a name="windy-webcam-timelapse-player" data-id="1603222616" data-play="month" href="https://windy.com/webcams/1603222616" target="_blank">Arjang › East: Barlingshult</a><script async type="text/javascript" src="https://webcams.windy.com/webcams/public/embed/script/player.js"></script>
+  </section>
+</div>

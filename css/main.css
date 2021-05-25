@@ -1,16 +1,17 @@
+@import "variables.css";
+
 html,
 body {
-  background-color: #E7EAF3;
+  background-color: var(--app-bg);
   margin: 0;
   font-family: 'Averia Serif Libre', cursive;
+  margin: 0 auto;
+  max-width: 125ex;
 }
 
 .site-header {
-  background-color: #ECC07E;
-  color: black;
-  padding: 0.8em 0;
-  font-size: 1.2rem;
-  text-align: center;
+  padding: 1em var(--gr-rem);
+  font-size: calc(1rem * var(--gr));
   position: relative;
   overflow: hidden;
 }
@@ -21,14 +22,58 @@ body {
 }
 
 main {
-  margin: 0 auto;
-  max-width: 125ex;
+  padding: 0 var(--gr-rem);
 }
 
-.start-feed {
-  margin: 2rem;
-  background-color: white;
-  overflow: hidden;
-  border: 1px solid #888;
-  padding: 0 1rem;
+.feeds section + section {
+  margin-top: calc(var(--gr-rem) * 2);
+}
+
+.feeds section h1 {
+  text-align: center;
+  text-decoration: underline;
+  margin-bottom: calc(var(--gr-rem) * 2);
+}
+
+.feed-columns {
+  column-count: auto;
+  column-gap: 2rem;
+  column-width: 40ch;
+}
+
+.feed-columns article {
+  break-inside: avoid;
+}
+
+.feed-columns article + article {
+  margin-top: 1rem;
+}
+
+.feed-columns a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.feed-columns .post-list--title {
+  font-weight: bold;
+  text-decoration: none;
+  color: inherit;
+  display: block;
+  text-align: center;
+}
+
+.feed-columns article:hover .post-list--title {
+  text-decoration: underline;
+}
+
+.feed-columns .post-list--date {
+  display: block;
+  text-align: center;
+  font-style: italic;
+}
+
+.windy-webcam-timelapse-player-iframe {
+  max-width: 500px;
+  margin: 0 auto;
+  filter: sepia(100%);
 }

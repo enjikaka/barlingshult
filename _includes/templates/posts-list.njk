@@ -1,26 +1,25 @@
-<ol>
-  {% for post in postslist | reverse %}
-  <li class="postList-post">
-    <a href="{{ post.data.url | url }}" class="postList-title"{% if entry.data.url == url %} aria-current="page"{% endif %}>
+{% for post in postslist | reverse %}
+  <article>
+    <a href="{{ post.data.url | url }}">
       {% if post.data.title %}
-        <strong>{{ post.data.title }}</strong>
+        <strong class="post-list--title">{{ post.data.title }}</strong>
       {% else %}
         <code>{{ post.data.url }}</code>
       {% endif %}
+
+
+      <p>
+      {{ post.data.content | striptags | truncate(200) | trim }}
+      </p>
+
+      <time class="post-list--date" datetime="{{ post.data.date | date('DATETIME') }}">
+        {{ post.data.date | toISODate }}
+      </time>
     </a>
-
-    {% if post.data.author %}
-      <span>{{ post.data.author }}</span>,
-    {% endif %}
-
-    <time class="postList-date" datetime="{{ post.data.date | date('DATETIME') }}">
-      {{ post.data.date | toISODate }}
-    </time>
 
     {% for tag in post.data.tags %}
       {% set tagUrl %}/tags/{{ tag }}/{% endset %}
       <a href="{{ tagUrl | url }}" class="tag">{{ tag }}</a>
     {% endfor %}
-  </li>
+</article>
 {% endfor %}
-</ol>
