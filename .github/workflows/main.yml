@@ -17,6 +17,13 @@ jobs:
     steps:
       - name: Checkout repo
         uses: actions/checkout@v2
+      - name: Cache images
+        id: image-cache
+        uses: actions/cache@v2
+        with:
+          path: |
+            _cache
+          key: ${{ runner.os }}-img
       - name: Setup Deno
         uses: denoland/setup-deno@main
         with:
