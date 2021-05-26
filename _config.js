@@ -29,6 +29,7 @@ site.filter(
   (array = [], n) => (n < 0) ? array.slice(n) : array.slice(0, n),
 );
 
+site.filter('baseHref', () => site.options.location.toString());
 site.filter('min', (...numbers) => Math.min.apply(null, numbers));
 site.filter('toISODate', date => new Date(date).toISOString().split('T')[0]);
 
