@@ -2,8 +2,7 @@ import lume from "https://deno.land/x/lume@v0.20.0/mod.js";
 import date from "https://deno.land/x/lume@v0.20.0/plugins/date.js";
 import postcss from "https://deno.land/x/lume@v0.20.0/plugins/postcss.js";
 import terser from "https://deno.land/x/lume@v0.20.0/plugins/terser.js";
-
-import squoosh from './squoosh-2.js';
+import squoosh from "https://deno.land/x/lume_plugin_squoosh@v0.0.1/index.js";
 
 const site = lume({
   location: new URL('https://barlingshult.se/'),
