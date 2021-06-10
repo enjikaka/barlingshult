@@ -1,0 +1,17 @@
+---
+title: Växter
+layout: layouts/main.njk
+url: /växter/
+---
+{% for tag in search.tags() %}
+  <div class="feeds">
+    <section class="post-feed">
+      <h1>{{ tag | tagName }}</h1>
+      <div class="feed-columns">
+        {% set plants = search.pages("type=plants") %}
+        {% set plantslist = search.pages(tag) %}
+        {% include "templates/plants-list.njk" %}
+      </div>
+    </section>
+  </div>
+{% endfor %}
