@@ -7,3 +7,6 @@ dev:
 ipfs:
 	ipfs name publish --key=barlingshult /ipfs/$(ipfs add -r _site -Q)
 	ipfs pin remote add --service=pinata $(ipfs add -r _site -Q -n)
+
+deploy:
+	rsync -avz ./_site/ static@kvm.vufuzi.se:/home/static/barlingshult.se
