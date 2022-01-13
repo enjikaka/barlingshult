@@ -9,4 +9,4 @@ ipfs:
 	ipfs pin remote add --service=pinata $(ipfs add -r _site -Q -n)
 
 deploy:
-	rsync -a _site/ $(DEST):~/static/barlingshult.se/
+	rsync -a _site/ $(DEST):/home/static/barlingshult.se/
