@@ -13,12 +13,7 @@ function LocalDate({ datetime }) {
     }
 
     const date = new Date(datetime);
-    const rtf = new Intl.RelativeTimeFormat(navigator.language, { numeric: 'auto' });
-    const dtf = new Intl.DateTimeFormat(navigator.language, {
-      month: 'numeric',
-      day: 'numeric',
-      year: 'numeric'
-    });
+    const dtf = new Intl.DateTimeFormat(navigator.language, { dateStyle: 'full' });
 
     const absoluteDateText = dtf.format(date);
 
