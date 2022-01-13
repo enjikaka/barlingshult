@@ -20,16 +20,13 @@ function LocalDate({ datetime }) {
       year: 'numeric'
     });
 
-    const daysBetween = Math.round(Math.abs(Date.now() - date.getTime()) / (1000*60*60*24));
-
     const absoluteDateText = dtf.format(date);
-    const relativeDateText = rtf.format(-daysBetween, 'days');
 
     const time = $('time');
 
     time.setAttribute('datetime', datetime);
     time.setAttribute('title', absoluteDateText);
-    time.textContent = relativeDateText;
+    time.textContent = absoluteDateText;
   });
 }
 
