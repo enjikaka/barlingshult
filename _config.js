@@ -1,10 +1,11 @@
-import lume from "https://deno.land/x/lume@v0.24.0/mod.js";
-import date from "https://deno.land/x/lume@v0.24.0/plugins/date.js";
-import postcss from "https://deno.land/x/lume@v0.24.0/plugins/postcss.js";
-import terser from "https://deno.land/x/lume@v0.24.0/plugins/terser.js";
-import squoosh from "https://deno.land/x/lume_plugin_squoosh@v0.0.4/index.js";
+import lume from "lume/mod.ts";
+import date from "lume/plugins/date.ts";
+import postcss from "lume/plugins/postcss.ts";
+import terser from "lume/plugins/terser.ts";
 
-import { DOMParser } from 'https://deno.land/x/lume@v0.24.0/deps/dom.ts';
+import squoosh from "https://deno.land/x/lume_plugin_squoosh@v0.0.8/index.js";
+
+import { DOMParser } from 'lume/deps/dom.ts';
 
 const site = lume({
   location: new URL('https://barlingshult.se/'),
