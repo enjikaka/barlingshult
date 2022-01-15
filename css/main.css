@@ -9,17 +9,26 @@ body {
   max-width: 150ex;
 }
 
+.site-footer,
 .site-header {
   padding: 1em var(--gr-rem);
   font-size: calc(1rem * var(--gr));
   position: relative;
   overflow: hidden;
-  border-bottom: 1px solid black;
 }
 
+.site-footer a,
 .site-header a {
   text-decoration: none;
   color: inherit;
+}
+
+.site-header {
+  border-bottom: 1px solid black;
+}
+
+.site-footer {
+  border-top: 1px solid black;
 }
 
 .archive-link {
