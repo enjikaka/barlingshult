@@ -39,6 +39,14 @@ site.filter('findImgTag', text => {
   return img ? img.outerHTML : '';
 });
 
+site.filter('findParagraphTag', text => {
+  const parser = new DOMParser();
+  const document = parser.parseFromString(text, 'text/html');
+  const img = document.querySelector('p');
+
+  return img ? img.outerHTML : '';
+});
+
 site.filter('baseHref', () => site.options.location.toString());
 site.filter('min', (...numbers) => Math.min.apply(null, numbers));
 site.filter('toISODate', date => new Date(date).toISOString().split('T')[0]);

@@ -58,11 +58,11 @@ main {
   column-width: 40ch;
 }
 
-.feed-columns article {
+.feed-columns details {
   break-inside: avoid;
 }
 
-.feed-columns article + article {
+.feed-columns details + details {
   margin-top: 1rem;
 }
 
@@ -95,32 +95,34 @@ main {
   filter: sepia(100%);
 }
 
-article.plant-list {
+.plant-list summary {
   display: flex;
   flex-flow: row nowrap;
 }
 
-article.plant-list picture {
-  width: 64px;
-  height: 64px;
+.plant-list picture {
   border-radius: 6px;
   overflow: hidden;
 }
 
-picture img {
-  width: 100%;
-  height: 100%;
+.plant-list picture img {
+  width: 64px;
+  height: 64px;
   display: block;
   object-fit: cover;
 }
 
-article.plant-list aside {
+.plant-list .info {
   display: flex;
   flex-flow: column nowrap;
   flex: 1;
   justify-content: center;
 }
 
-article.plant-list picture + aside {
+.plant-list picture + .info {
   margin-left: 1em;
+}
+
+.plant-list p {
+  margin-top: 1rem;
 }
