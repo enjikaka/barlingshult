@@ -12,7 +12,6 @@ body {
 .site-footer,
 .site-header {
   padding: 1em var(--gr-rem);
-  font-size: calc(1rem * var(--gr));
   position: relative;
   overflow: hidden;
 }
@@ -25,6 +24,7 @@ body {
 
 .site-header {
   border-bottom: 1px solid black;
+  font-size: calc(1rem * var(--gr));
 }
 
 .site-footer {
