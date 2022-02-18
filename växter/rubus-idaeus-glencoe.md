@@ -3,7 +3,7 @@ sort: "Glencoe"
 name: "Hallon"
 latin: "Rubus idaeus"
 tags:
-  - buske
+  - frukt
 ---
 
 <img src="/img/rubus-idaeus-glencoe.jpg" width="60" data-srcset="1x, 1.5x, 2x" alt="Hippophae rhamnoides" data-attribution="https://www.blomqvistplantskola.com/index.php?route=product/product&product_id=4444">

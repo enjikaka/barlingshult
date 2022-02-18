@@ -3,7 +3,7 @@ sort: "Blue Banana"
 name: "Blåbärstry"
 latin: "Lonicera caerulea"
 tags:
-  - buske
+  - bär
 ---
 
 <img src="/img/lonicera-caerulea-blue-banana.jpg" width="60" data-srcset="1x, 1.5x, 2x" alt="Lonicera caerulea" data-attribution="https://www.blomqvistplantskola.com/index.php?route=product/product&product_id=3018">

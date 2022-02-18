@@ -3,7 +3,7 @@ sort: Diana
 name: Hallon
 latin: Rubus idaeus
 tags:
-  - buske
+  - frukt
 ---
 
 <img src="/img/rubus-idaeus-diana.jpg" width="60" data-srcset="1x, 1.5x, 2x" alt="Rubus idaeus" data-attribution="https://www.klostra.se/hosthallon-diana-e-elitplanta-nyhet-2020">

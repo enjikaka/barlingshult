@@ -3,7 +3,7 @@ sort: "Silvast"
 name: "Krikon"
 latin: "Prunus domestica subsp. insititia"
 tags:
-  - träd
+  - frukt
 ---
 
 <img src="/img/prunus-domestica-silvast-krikon.jpg" width="60" data-srcset="1x, 1.5x, 2x" alt="Prunus domestica subsp. insititia" data-attribution="https://www.blomqvistplantskola.com/index.php?route=product/product&product_id=5245">

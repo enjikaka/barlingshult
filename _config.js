@@ -52,10 +52,18 @@ site.filter('min', (...numbers) => Math.min.apply(null, numbers));
 site.filter('toISODate', date => new Date(date).toISOString().split('T')[0]);
 site.filter('tagName', tag => {
   switch (tag) {
-    case 'buske':
-      return 'Buskar';
+    case 'nöt':
+      return 'Nötter';
+    case 'frukt':
+      return 'Frukt';
     case 'träd':
       return 'Träd';
+    case 'buske':
+      return 'Buskar';
+    case 'grönsak':
+      return 'Grönsaker';
+    case 'bär':
+      return 'Bär';
     default:
       return tag;
   }

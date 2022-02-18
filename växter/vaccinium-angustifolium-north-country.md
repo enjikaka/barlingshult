@@ -3,7 +3,7 @@ sort: North Country
 name: Hybridblåbär
 latin: Vaccinium angustifolium
 tags:
-  - buske
+  - bär
 ---
 
 <img src="/img/vaccinium-angustifolium-north-country.jpg" width="60" data-srcset="1x, 1.5x, 2x" alt="Vaccinium angustifolium" data-attribution="https://www.blomqvistplantskola.com/index.php?route=product/product&product_id=1078">

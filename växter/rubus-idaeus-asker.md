@@ -3,7 +3,7 @@ sort: Asker
 name: Trädgårdshallon
 latin: Rubus idaeus
 tags:
-  - buske
+  - frukt
 ---
 
 <img src="/img/rubus-idaeus-asker.jpg" width="60" data-srcset="1x, 1.5x, 2x" alt="Rubus idaeus" data-attribution="https://www.odla.nu/produkt/tradgardshallon-asker-c2">

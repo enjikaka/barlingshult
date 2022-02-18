@@ -3,7 +3,7 @@ sort: "Solntsedar"
 name: "Äpple"
 latin: "Malus domestica"
 tags:
-  - träd
+  - frukt
 ---
 
 

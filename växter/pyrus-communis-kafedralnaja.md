@@ -3,7 +3,7 @@ sort: "Kafedralnaja"
 name: "Päron"
 latin: "Pyrus communis"
 tags:
-  - träd
+  - frukt
 ---
 
 <img src="/img/pyrus-communis-kafedralnaja.jpg" width="60" data-srcset="1x, 1.5x, 2x" alt="Pyrus communis" data-attribution="https://www.blomqvistplantskola.com/index.php?route=product/product&product_id=4148">

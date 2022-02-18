@@ -3,7 +3,7 @@ sort: Snövit
 name: Luddkörsbär
 latin: Prunus tomentosa
 tags:
-  - buske
+  - frukt
 ---
 
 <img src="/img/prunus-tomentosa-snovit.jpg" width="60" data-srcset="1x, 1.5x, 2x" alt="Vaccinium angustifolium" data-attribution="https://www.blomqvistplantskola.com/index.php?route=product/product&product_id=3353">

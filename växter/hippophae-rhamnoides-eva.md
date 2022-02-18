@@ -3,7 +3,7 @@ sort: "Eva"
 name: "Havtorn"
 latin: "Hippophae rhamnoides"
 tags:
-  - buske
+  - bär
 ---
 
 <img src="/img/hippophae-rhamnoides-eva.jpg" width="60" data-srcset="1x, 1.5x, 2x" alt="Hippophae rhamnoides" data-attribution="https://www.blomqvistplantskola.com/index.php?route=product/product&product_id=1039">

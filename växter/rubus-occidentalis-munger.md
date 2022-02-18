@@ -3,7 +3,7 @@ sort: Rubus occidentalis
 name: Svarthallon
 latin: Rubus occidentalis
 tags:
-  - buske
+  - frukt
 ---
 
 <img src="/img/rubus-occidentalis-munger.jpg" width="60" data-srcset="1x, 1.5x, 2x" alt="Rubus occidentalis" data-attribution="https://www.odla.nu/produkt/svarthallon-munger">

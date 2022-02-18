@@ -3,7 +3,7 @@ sort: "Gustavs bästa"
 name: "Äpple"
 latin: "Malus domestica"
 tags:
-  - träd
+  - frukt
 ---
 
 <img src="/img/malus-domestica-gustavs-basta.jpg" width="60" data-srcset="1x, 1.5x, 2x" alt="Malus domestica" data-attribution="https://www.blomqvistplantskola.com/index.php?route=product/product&product_id=1997">
