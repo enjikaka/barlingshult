@@ -1,5 +1,5 @@
 ---
-name: Svarta Honungsbär
+sort: Svarta Honungsbär
 name: Spärrkrusbär
 latin: Ribes divaricatum
 tags:
