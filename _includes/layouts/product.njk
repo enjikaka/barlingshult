@@ -19,5 +19,9 @@ bodyClass: body-post
       <dt>Grönt Kulturarv</dt>
       <dd>{% if tags.includes("grönt kulturarv") %}ja{% else %}nej{% endif %}</dd>
     </dl>
+
+    {% if tags.includes("grönt kulturarv") %}
+    <small>Allt utsäde kommer från våra egna plantor på gården.</small>
+    {% endif %}
   </div>
 </article>
