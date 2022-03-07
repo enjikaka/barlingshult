@@ -4,6 +4,8 @@ sort: Lanthavre från Värmland
 latin: Avena sativa
 price: 49
 amount: 8 gram
+tags:
+  - frö
 ---
 
 <img src="/img/fro-havre.jpg" width="60" data-srcset="1x, 1.5x, 2x" alt="Lanthavre från Värmland" class="thumb">

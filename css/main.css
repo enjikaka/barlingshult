@@ -92,6 +92,13 @@ main {
   filter: sepia(100%);
 }
 
+
+.figure figure {
+  margin: 0 auto;
+  display: block;
+  padding: 0;
+}
+
 .plant-list summary,
 .plant-list .product-row {
   display: flex;
@@ -132,4 +139,16 @@ main {
 .product dl {
   border: 8px double black;
   padding: 1rem;
+}
+
+article footer,
+article figure {
+  display: grid;
+  place-items: center;
+}
+
+article figure figcaption {
+  font-size: 0.8rem;
+  margin-top: 1rem;
+  display: block;
 }
