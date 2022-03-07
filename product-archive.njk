@@ -1,0 +1,14 @@
+---
+title: Produkter
+layout: layouts/main.njk
+url: /produkter/
+---
+<div class="feeds">
+  <section class="post-feed">
+    <h1>Produkter</h1>
+    <nav class="feed-columns plant-list">
+      {% set productslist = search.pages("type=products") %}
+      {% include "templates/products-list.njk" %}
+    </nav>
+  </section>
+</div>

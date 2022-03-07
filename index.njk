@@ -26,6 +26,14 @@ layout: layouts/main.njk
     </div>
     <a href="/växter/" class="archive-link">Visa fler...</a>
   </section>
+   <section class="post-feed">
+    <h1>Produkter</h1>
+    <nav class="feed-columns plant-list">
+      {% set productslist = search.pages("type=products") | head(-4) %}
+      {% include "templates/products-list.njk" %}
+    </nav>
+    <a href="/produkter/" class="archive-link">Visa fler...</a>
+  </section>
   <section class="webcam">
     <h1>Webbkamera</h1>
     <a name="windy-webcam-timelapse-player" data-id="1603222616" data-play="month" href="https://windy.com/webcams/1603222616" target="_blank">Arjang › East: Barlingshult</a><script async type="text/javascript" src="https://webcams.windy.com/webcams/public/embed/script/player.js"></script>

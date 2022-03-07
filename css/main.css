@@ -29,6 +29,7 @@ body {
 
 .site-footer {
   border-top: 1px solid black;
+  margin-top: 1rem;
 }
 
 .archive-link {
@@ -53,17 +54,13 @@ main {
 }
 
 .feed-columns {
-  column-count: auto;
-  column-gap: 2rem;
-  column-width: 40ch;
+  display: grid;
+  grid-template-columns: 2fr 2fr;
+  gap: 1rem;
 }
 
 .feed-columns details {
   break-inside: avoid;
-}
-
-.feed-columns details + details {
-  margin-top: 1rem;
 }
 
 .feed-columns a {
@@ -95,7 +92,8 @@ main {
   filter: sepia(100%);
 }
 
-.plant-list summary {
+.plant-list summary,
+.plant-list .product-row {
   display: flex;
   flex-flow: row nowrap;
 }
@@ -125,4 +123,13 @@ main {
 
 .plant-list p {
   margin-top: 1rem;
+}
+
+.product picture:first-child {
+  display: none;
+}
+
+.product dl {
+  border: 8px double black;
+  padding: 1rem;
 }

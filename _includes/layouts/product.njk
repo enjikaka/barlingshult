@@ -1,0 +1,23 @@
+---
+layout: layouts/main.njk
+bodyClass: body-post
+---
+<link rel="stylesheet" href="{{ '/css/post.css' | url }}">
+<article class="post product">
+  <h1 class="post-title">
+    {{ name }} {% if sort %}'{{ sort }}'{% endif %}
+  </h1>
+
+  <div class="post-body">
+    {{ content | safe }}
+
+    <dl>
+      <dt>Pris</dt>
+      <dd>{{ price }} kr</dd>
+      <dt>Mängd</dt>
+      <dd>{{ amount }}</dd>
+      <dt>Grönt Kulturarv</dt>
+      <dd>{% if tags.includes("grönt kulturarv") %}ja{% else %}nej{% endif %}</dd>
+    </dl>
+  </div>
+</article>
