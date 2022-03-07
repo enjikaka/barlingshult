@@ -39,6 +39,8 @@ body {
 
 main {
   padding: var(--gr-rem);
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .feeds section + section {
@@ -53,7 +55,7 @@ main {
 
 .feed-columns {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(40ch, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(min(40ch, 100%), 1fr));
   gap: 1rem;
 }
 
