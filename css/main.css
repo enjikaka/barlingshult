@@ -6,7 +6,6 @@ body {
   margin: 0;
   font-family: 'Averia Serif Libre', cursive;
   margin: 0 auto;
-  max-width: 150ex;
 }
 
 .site-footer,
@@ -29,7 +28,6 @@ body {
 
 .site-footer {
   border-top: 1px solid black;
-  margin-top: 1rem;
 }
 
 .archive-link {
@@ -40,7 +38,7 @@ body {
 }
 
 main {
-  padding: 0 var(--gr-rem);
+  padding: var(--gr-rem);
 }
 
 .feeds section + section {
@@ -55,7 +53,7 @@ main {
 
 .feed-columns {
   display: grid;
-  grid-template-columns: 2fr 2fr;
+  grid-template-columns: repeat(auto-fit, minmax(40ch, 1fr));
   gap: 1rem;
 }
 
