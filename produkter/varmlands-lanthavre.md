@@ -4,6 +4,7 @@ sort: Lanthavre från Värmland
 latin: Avena sativa
 price: 49
 amount: 8 gram
+directSowingTime: 04
 tags:
   - frö
 ---

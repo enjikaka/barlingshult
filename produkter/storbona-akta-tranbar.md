@@ -14,3 +14,5 @@ tags:
 <img src="/img/fro-tranbar.jpg" width="256" data-srcset="1x, 1.5x, 2x" alt="Störböna Äkta tranbär">
 
 En störböna som får vinröda, runda och välsmakande bönor. Nötig smak. Högväxande och ger god skörd.
+
+Sås på friland när jorden blivit varm (minst 10 grader).
