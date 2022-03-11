@@ -11,7 +11,6 @@ bodyClass: body-post
 
   <div class="post-body">
     {{ content | safe }}
-
     <dl>
       <dt>Pris</dt>
       <dd>{{ price }} kr</dd>
@@ -59,3 +58,17 @@ bodyClass: body-post
     </footer>
   </div>
 </article>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org/",
+  "@type": "Product",
+  "name": "{{ name }} {% if sort %}'{{ sort }}'{% endif %}",
+  "description": "{{ content | findTextContent | truncate(50) }}",
+  "image": ["{{ content | findImgSrc }}"],
+  "offers": {
+    "@type": "Offer",
+    "priceCurrency": "SEK",
+    "price": "49"
+  }
+}
+</script>

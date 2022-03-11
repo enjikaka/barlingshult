@@ -39,12 +39,29 @@ site.filter('findImgTag', text => {
   return img ? img.outerHTML : '';
 });
 
+site.filter('findImgSrc', text => {
+  const parser = new DOMParser();
+  const document = parser.parseFromString(text, 'text/html');
+  const img = document.querySelector('img');
+
+  return img ? img.getAttribute('src').replace('.jpg', '_60w.webp') : '';
+});
+
+
 site.filter('findParagraphTag', text => {
   const parser = new DOMParser();
   const document = parser.parseFromString(text, 'text/html');
   const img = document.querySelector('p');
 
   return img ? img.outerHTML : '';
+});
+
+site.filter('findTextContent', text => {
+  const parser = new DOMParser();
+  const document = parser.parseFromString(text, 'text/html');
+  const p = document.querySelector('p');
+
+  return p ? p.textContent : '';
 });
 
 site.filter('baseHref', () => site.options.location.toString());
