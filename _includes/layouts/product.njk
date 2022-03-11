@@ -3,6 +3,7 @@ layout: layouts/main.njk
 bodyClass: body-post
 ---
 <link rel="stylesheet" href="{{ '/css/post.css' | url }}">
+<script type="module" src="{{ '/js/local-month-name.js' | url }}"></script>
 <article class="post product">
   <h1 class="post-title">
     {{ name }} {% if sort %}'{{ sort }}'{% endif %}
@@ -23,6 +24,22 @@ bodyClass: body-post
       {% if tags.includes("bevarandesort") %}
       <dt>Bevarandestatus</dt>
       <dd><dfn title="En bevarandesort är en lantsort eller en annan sort som har odlats före 1950 i Sverige. Våra gamla sorter är ett kulturarv som det finns många skäl till att bevara."><a href="https://jordbruksverket.se/vaxter/odling/utsade-och-registrering-av-vaxtsorter/registrering-av-nya-sorter-och-vaxtforadlarratter#h-Bevarandesorter" target="_blank">Bevarandesort</a></dfn></dd>
+      {% endif %}
+      {% if latin %}
+      <dt>Botaniskt namn</dt>
+      <dd>{{latin}}</dd>
+      {% endif %}
+      {% if ngb %}
+      <dt><dfn title="Sorteringsnummer för Nordiska Gendatabanken">NGB</dfn></dt>
+      <dd>{{ngb}}</dd>
+      {% endif %}
+      {% if preSowingTime %}
+      <dt>Försådd</dt>
+      <dd><locale-month-name value="{{preSowingTime}}"></locale-month-name></dd>
+      {% endif %}
+      {% if directSowingTime %}
+      <dt>Direktsådd</dt>
+      <dd><locale-month-name value="{{directSowingTime}}"></locale-month-name></dd>
       {% endif %}
     </dl>
 

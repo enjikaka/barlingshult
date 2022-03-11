@@ -4,6 +4,8 @@ sort: Äkta Tranbär
 latin: Phaseolus vulgaris
 price: 49
 amount: 10 frö
+preSowingTime: 05
+directSowingTime: 06
 tags:
   - frö
 ---
