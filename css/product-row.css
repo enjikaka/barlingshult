@@ -1,0 +1,38 @@
+.product-row .product-header {
+  display: flex;
+  flex-flow: row nowrap;
+}
+
+.product-row picture {
+  width: 60px;
+  height: 60px;
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.product-row picture img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+}
+
+.product-row .info {
+  display: flex;
+  flex-flow: column nowrap;
+  flex: 1;
+  justify-content: center;
+}
+
+.product-row .info h3 {
+  font-size: 1rem;
+  margin: 0;
+}
+
+.product-row picture + .info {
+  margin-left: 1em;
+}
+
+.product-row p {
+  margin-top: 1rem;
+}

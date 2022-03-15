@@ -3,10 +3,15 @@ title: Växter
 layout: layouts/main.njk
 url: /växter/
 ---
+<h1>Växter på gården</h1>
+<p>
+  Den biologiska mångfalden är viktig. Inte bara för pollinatörer — inklusive våra nordiska honungsbin — utan även för övriga insekter och djur. Små fåglar söker skydd bland buskar och fjärilar är beroende av vissa speciella värdväxter för sin överlevnad. Med detta i åtanke arbetas det på gården för en god mångfald av variation av både arter och sortvarianter inom arter. Inte bara blir trädgården finare och fjärilarna fler, men även honungen smakar extra gott.
+</p>
+<link rel="stylesheet" href="{{ '/css/product-row.css' | url }}">
 {% for tag in search.tags("type=plants") %}
   <div class="feeds">
     <section class="post-feed">
-      <h1>{{ tag | tagName }}</h1>
+      <h2>{{ tag | tagName }}</h2>
       <div class="feed-columns">
         {% set plants = search.pages("type=plants") %}
         {% set plantslist = search.pages(tag) %}

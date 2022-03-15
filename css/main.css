@@ -54,21 +54,27 @@ main {
 }
 
 .feed-columns {
+  column-count: auto;
+  column-width: 40ch;
+  gap: 1rem;
+}
+
+.feed-columns article {
+  break-inside: avoid;
+}
+
+.feed-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(min(40ch, 100%), 1fr));
   gap: 1rem;
 }
 
-.feed-columns details {
-  break-inside: avoid;
-}
-
-.feed-columns a {
+a {
   text-decoration: none;
   color: inherit;
 }
 
-.feed-columns .post-list--title {
+.feed-grid .post-list--title {
   font-weight: bold;
   text-decoration: none;
   color: inherit;
@@ -76,11 +82,11 @@ main {
   text-align: center;
 }
 
-.feed-columns article:hover .post-list--title {
+.feed-grid article:hover .post-list--title {
   text-decoration: underline;
 }
 
-.feed-columns .post-list--date {
+.feed-grid .post-list--date {
   display: block;
   text-align: center;
   font-style: italic;
@@ -99,48 +105,6 @@ main {
   padding: 0;
 }
 
-.plant-list summary,
-.plant-list .product-row {
-  display: flex;
-  flex-flow: row nowrap;
-}
-
-.plant-list picture {
-  border-radius: 6px;
-  overflow: hidden;
-}
-
-.plant-list picture img {
-  width: 64px;
-  height: 64px;
-  display: block;
-  object-fit: cover;
-}
-
-.plant-list .info {
-  display: flex;
-  flex-flow: column nowrap;
-  flex: 1;
-  justify-content: center;
-}
-
-.plant-list picture + .info {
-  margin-left: 1em;
-}
-
-.plant-list p {
-  margin-top: 1rem;
-}
-
-.product picture:first-child {
-  display: none;
-}
-
-.product dl {
-  border: 8px double black;
-  padding: 1rem;
-}
-
 article footer,
 article figure {
   display: grid;
@@ -151,4 +115,13 @@ article figure figcaption {
   font-size: 0.8rem;
   margin-top: 1rem;
   display: block;
+}
+
+nav a {
+  color: currentColor;
+  text-decoration: none;
+}
+
+nav a:hover {
+  text-decoration: underline;
 }

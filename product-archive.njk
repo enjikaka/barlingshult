@@ -3,10 +3,11 @@ title: Produkter
 layout: layouts/main.njk
 url: /produkter/
 ---
+<link rel="stylesheet" href="{{ '/css/product-row.css' | url }}">
 <div class="feeds">
   <section class="post-feed">
     <h1>Produkter</h1>
-    <nav class="feed-columns plant-list">
+    <nav class="feed-grid">
       {% set productslist = search.pages("type=products") %}
       {% include "templates/products-list.njk" %}
     </nav>

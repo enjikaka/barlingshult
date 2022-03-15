@@ -4,7 +4,7 @@ function LocalDate({ datetime }) {
   const { html, postRender, $ } = this;
 
   html`
-    <time></time>
+    <time itemprop="datePublished"></time>
   `;
 
   postRender(() => {
@@ -19,7 +19,8 @@ function LocalDate({ datetime }) {
 
     const time = $('time');
 
-    time.setAttribute('datetime', datetime);
+    time.setAttribute('content', date.toISOString());
+    time.setAttribute('datetime', date.toISOString());
     time.setAttribute('title', absoluteDateText);
     time.textContent = absoluteDateText;
   });

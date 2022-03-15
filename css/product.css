@@ -1,0 +1,8 @@
+.product picture:first-child {
+  display: none;
+}
+
+.product dl {
+  border: 8px double black;
+  padding: 1rem;
+}

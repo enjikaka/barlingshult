@@ -1,8 +1,10 @@
 {% for product in productslist %}
-  <a href="{{ product.data.url | url }}" class="product-row">
-    {{ product.data.content | findImgTag | safe }}
-    <div class="info">
-      {{ product.data.name }} {% if product.data.sort %}'{{ product.data.sort }}'{% endif %}
-    </div>
-  </a>
+  <div class="product-row">
+    <a href="{{ product.data.url | url }}" class="product-header">
+      {{ product.data.content | findImgTag | safe }}
+      <div class="info">
+        {{ product.data.name }} {% if product.data.sort %}'{{ product.data.sort }}'{% endif %}
+      </div>
+    </a>
+  </div>
 {% endfor %}
