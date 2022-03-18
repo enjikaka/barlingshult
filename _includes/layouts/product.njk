@@ -16,6 +16,8 @@ bodyClass: body-post
   <div class="post-body">
     {{ content | safe }}
     <dl>
+      <dt>I lager</dt>
+      <dd>{% if in_stock %}ja{% else %}nej{% endif %}</dd>
       <dt>Pris</dt>
       <dd>{{ price }} kr</dd>
       <dt>Mängd</dt>
@@ -59,6 +61,7 @@ bodyClass: body-post
       {% if tags.includes("frö") %}
         <small>Allt utsäde kommer från våra egna plantor på gården.</small>
       {% endif %}
+      <small>Köp av oss i REKO-ringen i Arvika eller Årjäng. Frön kan skickas med post. Skicka ett mail för att beställa.</small>
     </footer>
   </div>
 </article>
