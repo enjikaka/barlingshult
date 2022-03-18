@@ -5,6 +5,7 @@ ngb: 103076
 latin: Pisum sativum
 price: 49
 amount: 30 frön
+in_stock: true
 preSowingTime: 04
 directSowingTime: 05
 tags:

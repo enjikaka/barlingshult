@@ -3,6 +3,7 @@ name: Paprika
 sort: Korosco
 latin: Capsicum annuum
 price: 49
+in_stock: true
 amount: 1 planta
 tags:
   - planta

@@ -4,6 +4,7 @@ sort: Hungarian Yellow Hot Wax
 latin: Capsicum annuum
 price: 49
 amount: 1 planta
+in_stock: true
 tags:
   - planta
 ---

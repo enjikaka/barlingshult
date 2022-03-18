@@ -4,6 +4,7 @@ sort: Mor Kristin
 ngb: 17805
 latin: Phaseolus vulgaris
 price: 49
+in_stock: true
 amount: 10 frö
 preSowingTime: 05
 directSowingTime: 06

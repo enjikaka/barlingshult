@@ -71,6 +71,7 @@ bodyClass: body-post
   "image": ["{{ content | findImgSrc }}"],
   "offers": {
     "@type": "Offer",
+    "availability": "https://schema.org/{% if in_stock %}InStock{% else %}OutOfStock{% endif %}",
     "priceCurrency": "SEK",
     "price": "49"
   }

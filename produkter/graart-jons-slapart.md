@@ -4,6 +4,7 @@ sort: Jons släpärt
 ngb: 21938
 latin: Pisum sativum
 price: 49
+in_stock: false
 amount: 10 frön
 preSowingTime: 04
 directSowingTime: 05
