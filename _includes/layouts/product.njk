@@ -73,7 +73,8 @@ bodyClass: body-post
     "@type": "Offer",
     "availability": "https://schema.org/{% if in_stock %}InStock{% else %}OutOfStock{% endif %}",
     "priceCurrency": "SEK",
-    "price": "49"
+    "price": "{{ price }}",
+    "priceValidUntil": "2022-12-31"
   }
 }
 </script>
