@@ -2,7 +2,7 @@
 name: Chili
 sort: Hungarian Yellow Hot Wax
 latin: Capsicum annuum
-price: 49
+price: 69
 amount: 1 planta
 in_stock: true
 tags:

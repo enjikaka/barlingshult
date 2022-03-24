@@ -2,9 +2,9 @@
 name: Chili
 sort: Buena Mulata
 latin: Capsicum annuum
-price: 49
+price: 69
 amount: 1 planta
-in_stock: true
+in_stock: false
 tags:
   - planta
 ---
