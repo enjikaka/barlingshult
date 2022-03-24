@@ -7,6 +7,7 @@ amount: 1 planta
 in_stock: true
 tags:
   - planta
+  - chili
 ---
 
 <img src="/img/plant-chili-aurora.jpg" width="60" data-srcset="1x, 1.5x, 2x" alt="Chili Aurora" class="thumb">

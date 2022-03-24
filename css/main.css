@@ -125,3 +125,12 @@ nav a {
 nav a:hover {
   text-decoration: underline;
 }
+
+.out-of-stock {
+  filter: grayscale(100%);
+  opacity: 0.8;
+}
+
+.out-of-stock .info span {
+  text-decoration: line-through;
+}

@@ -15,6 +15,13 @@ bodyClass: body-post
 
   <div class="post-body">
     {{ content | safe }}
+
+    {% if tags.includes("chili") %}
+      <p>
+        Plantan är ca 10-15 cm vid leverans. Bör planeras om i större kruka så fort som möjligt. Kan leva resten av sitt liv i kruka över 5 L inomhus i ljust fönster eller planteras utomhus när tempteraturen om natten inte understiger 10 grader. Bevaras den i kruka så är det viktigt att tänka på att chiliplantan är flerårig. Släng den alltså inte efter skörd utan låt den övervintra ljust inomhus.
+      </p>
+    {% endif %}
+
     <dl>
       <dt>I lager</dt>
       <dd>{% if in_stock %}ja{% else %}nej{% endif %}</dd>
