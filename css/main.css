@@ -6,6 +6,7 @@ body {
   margin: 0;
   font-family: 'Averia Serif Libre', cursive;
   margin: 0 auto;
+  scroll-behavior: smooth;
 }
 
 .site-footer,

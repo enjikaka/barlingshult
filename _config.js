@@ -74,13 +74,15 @@ site.filter('tagName', tag => {
     case 'frukt':
       return 'Frukt';
     case 'träd':
-      return 'Träd';
+      return 'Övriga träd';
     case 'buske':
       return 'Buskar';
     case 'grönsak':
       return 'Grönsaker';
     case 'bär':
       return 'Bär';
+    case 'perenn_grönsak':
+      return 'Perenna grönsaker';
     default:
       return tag;
   }
