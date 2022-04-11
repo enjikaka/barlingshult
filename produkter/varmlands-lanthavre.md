@@ -3,7 +3,7 @@ name: Havre
 sort: Lanthavre från Värmland
 latin: Avena sativa
 price: 49
-in_stock: false
+in_stock: true
 amount: 8 gram
 directSowingTime: 04
 tags:

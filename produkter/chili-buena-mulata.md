@@ -4,7 +4,7 @@ sort: Buena Mulata
 latin: Capsicum annuum
 price: 69
 amount: 1 planta
-in_stock: false
+in_stock: true
 tags:
   - planta
   - chili
