@@ -2,7 +2,7 @@
 name: Chili
 sort: Bulgarian Carrot
 latin: Capsicum annuum
-price: 69
+price: 49
 amount: 1 planta
 in_stock: true
 tags:
