@@ -16,15 +16,19 @@ body {
   overflow: hidden;
 }
 
-.site-footer a,
-.site-header a {
-  text-decoration: none;
-  color: inherit;
+.site-header {
+  border-bottom: 1px dashed rgba(0, 0, 0, 0.5);
 }
 
-.site-header {
-  border-bottom: 1px solid black;
+.site-header strong {
   font-size: calc(1rem * var(--gr));
+  text-decoration: underline;
+}
+
+.site-header p {
+  max-width: 60ch;
+  text-align: justify;
+  hyphens: auto;
 }
 
 .site-footer {

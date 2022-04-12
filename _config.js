@@ -3,7 +3,7 @@ import date from "lume/plugins/date.ts";
 import postcss from "lume/plugins/postcss.ts";
 import terser from "lume/plugins/terser.ts";
 
-import squoosh from "https://deno.land/x/lume_plugin_squoosh@v0.0.9/index.ts";
+import squoosh from "https://deno.land/x/lume_plugin_squoosh@v0.0.11/index.ts";
 
 import { DOMParser } from 'lume/deps/dom.ts';
 
