@@ -5,19 +5,29 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="theme-color" content="#ecc07e">
-    <title>{{ title }} - Barlingshult</title>
+    <title>{% if title %}{{ title }} - {% endif %}{% if name %}{{ name }}{% if sort %} '{{ sort }}'{% endif %} - {% endif %}Barlingshult</title>
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Averia+Serif+Libre:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="{{ '/css/main.css' | url }}">
+    <link rel="stylesheet" href="{{ '/css/product-row.css' | url }}">
+    <link rel="alternate" href="/feed.xml" type="application/atom+xml" title="{{ site.title }}">
+    <link rel="alternate" href="/feed.json" type="application/json" title="{{ site.title }}">
   </head>
   <body>
     <div class="site-header">
       <a href="/">
-        <strong>Barlingshult</strong>
+        <strong>Barlingshult Småbruk</strong>
       </a>
+      <p>
+        I natursköna Glaskogen arbetas det på gården för biologisk mångfald. Alltjämt utan fossila bränslen och andra skadliga medel. Här växer mängder med bär och frukt i harmoni med pollinatörer. Både våra egna nordiska honungbin, och de vilda förstås.
+      </p>
     </div>
     <main>
       {{ content | safe }}
     </main>
+    <footer class="site-footer">
+      Kontakt: <a href="mailto:jeremy@barlingshult.se">jeremy@barlingshult.se</a>
+    </footer>
+    <script defer data-domain="barlingshult.se" src="https://plausible.io/js/plausible.js"></script>
   </body>
 </html>

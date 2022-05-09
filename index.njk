@@ -5,7 +5,7 @@ layout: layouts/main.njk
 <div class="feeds">
   <section class="post-feed">
     <h1>Blogginlägg</h1>
-    <div class="feed-columns">
+    <div class="feed-grid">
       {% set postslist = search.pages("type=posts") | head(-4) %}
       {% include "templates/posts-list.njk" %}
     </div>
@@ -13,7 +13,7 @@ layout: layouts/main.njk
   </section>
   <section class="post-feed">
     <h1>Historier</h1>
-    <div class="feed-columns">
+    <div class="feed-grid">
       {% set postslist = search.pages("type=historic-sources") | head(-4) %}
       {% include "templates/posts-list.njk" %}
     </div>
@@ -25,6 +25,14 @@ layout: layouts/main.njk
       {% include "templates/plants-list.njk" %}
     </div>
     <a href="/växter/" class="archive-link">Visa fler...</a>
+  </section>
+   <section class="post-feed">
+    <h1>Produkter</h1>
+    <nav class="feed-grid">
+      {% set productslist = search.pages("type=products") | head(-4) %}
+      {% include "templates/products-list.njk" %}
+    </nav>
+    <a href="/produkter/" class="archive-link">Visa fler...</a>
   </section>
   <section class="webcam">
     <h1>Webbkamera</h1>

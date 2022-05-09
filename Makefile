@@ -1,12 +1,12 @@
 build:
-	deno run --unstable -A https://deno.land/x/lume@v0.24.0/cli.js
+	deno run -A https://deno.land/x/lume@v1.7.3/ci.ts
 
 dev:
-	deno run --unstable -A https://deno.land/x/lume@v0.24.0/cli.js --serve --dev
+	deno run -A https://deno.land/x/lume@v1.7.3/ci.ts --serve --dev
 
 ipfs:
 	ipfs name publish --key=barlingshult /ipfs/$(ipfs add -r _site -Q)
 	ipfs pin remote add --service=pinata $(ipfs add -r _site -Q -n)
 
-deploy:
-	rsync -avz ./_site/ static@kvm.vufuzi.se:/home/static/barlingshult.se
+deploy: build
+	rsync -a _site/ $(DEST):/home/static/barlingshult.se/

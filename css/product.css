@@ -1,0 +1,16 @@
+.product picture:first-child {
+  display: none;
+}
+
+.product dl {
+  border: 8px double black;
+  padding: 1rem;
+}
+
+.figure-row {
+  display: flex;
+  flex-flow: row nowrap;
+  gap: 1rem;
+  justify-content: flex-start;
+  align-items: flex-start;
+}

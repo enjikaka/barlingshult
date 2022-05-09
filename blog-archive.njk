@@ -6,7 +6,7 @@ url: /inlägg/
 <div class="feeds">
   <section class="post-feed">
     <h1>Blogginlägg</h1>
-    <div class="feed-columns">
+    <div class="feed-grid">
       {% set postslist = search.pages("type=posts") %}
       {% include "templates/posts-list.njk" %}
     </div>

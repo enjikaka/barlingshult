@@ -4,7 +4,7 @@ function LocalDate({ datetime }) {
   const { html, postRender, $ } = this;
 
   html`
-    <time></time>
+    <time itemprop="datePublished"></time>
   `;
 
   postRender(() => {
@@ -13,23 +13,16 @@ function LocalDate({ datetime }) {
     }
 
     const date = new Date(datetime);
-    const rtf = new Intl.RelativeTimeFormat(navigator.language, { numeric: 'auto' });
-    const dtf = new Intl.DateTimeFormat(navigator.language, {
-      month: 'numeric',
-      day: 'numeric',
-      year: 'numeric'
-    });
-
-    const daysBetween = Math.round(Math.abs(Date.now() - date.getTime()) / (1000*60*60*24));
+    const dtf = new Intl.DateTimeFormat(navigator.language, { dateStyle: 'full' });
 
     const absoluteDateText = dtf.format(date);
-    const relativeDateText = rtf.format(-daysBetween, 'days');
 
     const time = $('time');
 
-    time.setAttribute('datetime', datetime);
+    time.setAttribute('content', date.toISOString());
+    time.setAttribute('datetime', date.toISOString());
     time.setAttribute('title', absoluteDateText);
-    time.textContent = relativeDateText;
+    time.textContent = absoluteDateText;
   });
 }
 

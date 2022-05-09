@@ -1,10 +1,11 @@
-import lume from "https://deno.land/x/lume@v0.24.0/mod.js";
-import date from "https://deno.land/x/lume@v0.24.0/plugins/date.js";
-import postcss from "https://deno.land/x/lume@v0.24.0/plugins/postcss.js";
-import terser from "https://deno.land/x/lume@v0.24.0/plugins/terser.js";
-import squoosh from "https://deno.land/x/lume_plugin_squoosh@v0.0.4/index.js";
+import lume from "lume/mod.ts";
+import date from "lume/plugins/date.ts";
+import postcss from "lume/plugins/postcss.ts";
+import terser from "lume/plugins/terser.ts";
 
-import { DOMParser } from 'https://deno.land/x/lume@v0.24.0/deps/dom.ts';
+import squoosh from "https://deno.land/x/lume_plugin_squoosh@v0.0.11/index.ts";
+
+import { DOMParser } from 'lume/deps/dom.ts';
 
 const site = lume({
   location: new URL('https://barlingshult.se/'),
@@ -38,15 +39,50 @@ site.filter('findImgTag', text => {
   return img ? img.outerHTML : '';
 });
 
+site.filter('findImgSrc', text => {
+  const parser = new DOMParser();
+  const document = parser.parseFromString(text, 'text/html');
+  const img = document.querySelector('img');
+
+  return img ? img.getAttribute('src').replace('.jpg', '_60w.webp') : '';
+});
+
+
+site.filter('findParagraphTag', text => {
+  const parser = new DOMParser();
+  const document = parser.parseFromString(text, 'text/html');
+  const img = document.querySelector('p');
+
+  return img ? img.outerHTML : '';
+});
+
+site.filter('findTextContent', text => {
+  const parser = new DOMParser();
+  const document = parser.parseFromString(text, 'text/html');
+  const p = document.querySelector('p');
+
+  return p ? p.textContent : '';
+});
+
 site.filter('baseHref', () => site.options.location.toString());
 site.filter('min', (...numbers) => Math.min.apply(null, numbers));
 site.filter('toISODate', date => new Date(date).toISOString().split('T')[0]);
 site.filter('tagName', tag => {
   switch (tag) {
+    case 'nöt':
+      return 'Nötter';
+    case 'frukt':
+      return 'Frukt';
+    case 'träd':
+      return 'Övriga träd';
     case 'buske':
       return 'Buskar';
-    case 'träd':
-      return 'Träd';
+    case 'grönsak':
+      return 'Grönsaker';
+    case 'bär':
+      return 'Bär';
+    case 'perenn_grönsak':
+      return 'Perenna grönsaker';
     default:
       return tag;
   }

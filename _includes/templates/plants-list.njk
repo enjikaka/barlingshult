@@ -1,9 +1,12 @@
 {% for plant in plantslist %}
-  <article class="plant-list">
-    {{ plant.data.content | findImgTag | safe }}
-    <aside>
-      <strong>{{ plant.data.name }} '{{ plant.data.sort }}'</strong>
-      <em>{{ plant.data.latin }}</em>
-    </aside>
+  <article class="product-row">
+    <header class="product-header">
+      {{ plant.data.content | findImgTag | safe }}
+      <div class="info">
+        <h3>{{ plant.data.name }} {% if plant.data.sort %}'{{ plant.data.sort }}'{% endif %}</h3>
+        <em>{{ plant.data.latin }}</em>
+      </div>
+    </header>
+    {{ plant.data.content | md | findParagraphTag | safe }}
   </article>
 {% endfor %}

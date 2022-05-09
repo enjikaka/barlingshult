@@ -4,8 +4,11 @@ bodyClass: body-post
 ---
 <script type="module" src="{{ '/js/local-date.js' | url }}"></script>
 <link rel="stylesheet" href="{{ '/css/post.css' | url }}">
-<article class="post">
-  <h1 class="post-title">{{ title }}</h1>
+<nav>
+  <a href="/inlägg">&#8249; Övriga inlägg</a>
+</nav>
+<article class="post" itemscope itemtype="http://schema.org/Article">
+  <h1 class="post-title" itemprop="headline">{{ title }}</h1>
 
   <nav class="post-tags">
   {% for tag in tags %}
@@ -14,14 +17,16 @@ bodyClass: body-post
   {% endfor %}
   </nav>
 
-  <div class="post-body">
+  <div class="post-body" itemprop="articleBody">
     {{ content | safe }}
   </div>
 
   <footer>
     {% if author %}
-      Skrivet av {{ author }}
-    {% endif %}
+      <div itemprop="author" itemscope itemtype="http://schema.org/Person">
+        Skrivet av <span itemprop="name">{{ author }}</span>
+      </div>
+    {% endif %}<br>
     <local-date datetime="{{ date | date('DATETIME') }}"></local-date>
   </footer>
 </article>
