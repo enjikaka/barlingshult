@@ -1,8 +1,8 @@
 build:
-	deno run -A https://deno.land/x/lume@v1.8.0/ci.ts
+	deno run -A https://deno.land/x/lume@v1.9.1/ci.ts
 
 dev:
-	deno run -A https://deno.land/x/lume@v1.8.0/ci.ts --serve --dev
+	deno run -A https://deno.land/x/lume@v1.9.1/ci.ts --serve --dev
 
 ipfs:
 	ipfs name publish --key=barlingshult /ipfs/$(ipfs add -r _site -Q)
