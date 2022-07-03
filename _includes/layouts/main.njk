@@ -14,14 +14,16 @@
     <link rel="alternate" href="/feed.json" type="application/json" title="{{ site.title }}">
   </head>
   <body>
-    <div class="site-header">
+    <header class="site-header">
       <a href="/">
         <strong>Barlingshult Småbruk</strong>
       </a>
+      {% if url == "/" %}
       <p>
         I natursköna Glaskogen arbetas det på gården för biologisk mångfald. Alltjämt utan fossila bränslen och andra skadliga medel. Här växer mängder med bär och frukt i harmoni med pollinatörer. Både våra egna nordiska honungbin, och de vilda förstås.
       </p>
-    </div>
+      {% endif %}
+    </header>
     <main>
       {{ content | safe }}
     </main>
