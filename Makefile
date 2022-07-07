@@ -13,3 +13,9 @@ sync_images:
 
 deploy: build
 	rsync -a _site/ $(DEST):/home/static/barlingshult.se/
+
+sync_images:
+	rsync -a $(DEST):/home/static/barlingshult.se/img _cache/
+
+sync_posts:
+	rsync -a $(DEST):/home/static/barlingshult.se/inlägg .
