@@ -4,7 +4,7 @@ sort: Yellow California Wonder
 latin: Capsicum annuum
 price: 69
 amount: 1 planta
-in_stock: true
+in_stock: false
 tags:
   - planta
   - chili
