@@ -1,6 +1,7 @@
 ---
 name: Tuvvaktelbär
 latin: Gaultheria procumbens
+disabled: true
 tags:
   - bär
 ---

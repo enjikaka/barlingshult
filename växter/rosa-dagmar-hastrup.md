@@ -2,6 +2,7 @@
 sort: Dagmar Hastrup
 name: Ros
 latin: Rosa 'Dagmar Hastrup'
+disabled: true
 tags:
   - frukt
 ---

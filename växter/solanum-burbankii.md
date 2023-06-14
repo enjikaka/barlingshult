@@ -1,6 +1,7 @@
 ---
 name: Wonderberry
 latin: Solanum burbankii
+disabled: true
 tags:
   - bär
 ---

@@ -2,6 +2,7 @@
 sort: Sockerbär
 name: Bäralm
 latin: Celtis occidentalis
+disabled: true
 tags:
   - frukt
 ---

@@ -2,6 +2,7 @@
 sort: Black Beauty
 name: Fläder
 latin: Sambucus nigra
+disabled: true
 tags:
   - bär
 ---

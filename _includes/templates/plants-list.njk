@@ -1,12 +1,15 @@
 {% for plant in plantslist %}
-  <article class="product-row">
-    <header class="product-header">
-      {{ plant.data.content | findImgTag | safe }}
-      <div class="info">
-        <h3>{{ plant.data.name }} {% if plant.data.sort %}'{{ plant.data.sort }}'{% endif %}</h3>
-        <em>{{ plant.data.latin }}</em>
-      </div>
-    </header>
-    {{ plant.data.content | md | findParagraphTag | safe }}
-  </article>
+  {% if not plant.data.disabled %}
+    <article class="product-row {% if plant.data.dead %} dead{% endif %}">
+      <header class="product-header">
+        {{ plant.data.content | findImgTag | safe }}
+        <div class="info">
+          <h3>{{ plant.data.name }} {% if plant.data.sort %}'{{ plant.data.sort }}'{% endif %}</h3>
+          <em>{{ plant.data.latin }}</em>
+        </div>
+      </header>
+      {% if plant.data.dead %}<p><strong><small>DÖTT</small></strong></p>{% endif %}
+      {{ plant.data.content | md | findParagraphTag | safe }}
+    </article>
+  {% endif %}
 {% endfor %}

@@ -1,6 +1,7 @@
 ---
 name: Vinhallon
 latin: Rubus phoenicolasius
+dead: true
 tags:
   - frukt
 ---

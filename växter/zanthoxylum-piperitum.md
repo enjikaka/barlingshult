@@ -1,6 +1,7 @@
 ---
 name: Japanskt pepparträd
 latin: Zanthoxylum piperitum
+dead: true
 tags:
   - träd
 ---

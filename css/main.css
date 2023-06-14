@@ -140,6 +140,7 @@ nav a:hover {
   text-decoration: underline;
 }
 
+.dead,
 .out-of-stock {
   filter: grayscale(100%);
   opacity: 0.8;

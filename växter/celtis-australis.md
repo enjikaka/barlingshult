@@ -2,6 +2,7 @@
 sort: Lotusbär
 name: Europeisk bäralm
 latin: Celtis australis
+disabled: true
 tags:
   - frukt
 ---

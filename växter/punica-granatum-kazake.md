@@ -2,6 +2,7 @@
 sort: Kazake
 name: Granatäpple
 latin: Punica granatum
+disabled: true
 tags:
   - frukt
 ---

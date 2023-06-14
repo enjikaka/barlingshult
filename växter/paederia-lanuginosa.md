@@ -2,6 +2,7 @@
 sort: Ostplanta
 name: Lá Mo Long
 latin: Paederia lanuginosa
+disabled: true
 tags:
   - träd
 ---

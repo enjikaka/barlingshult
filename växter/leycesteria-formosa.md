@@ -2,6 +2,7 @@
 sort: Karamellbär
 name: Himalayakaprifol
 latin: Leycesteria formosa
+dead: true
 tags:
   - bär
 ---

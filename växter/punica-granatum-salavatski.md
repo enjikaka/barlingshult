@@ -2,6 +2,7 @@
 sort: Salavatski
 name: Granatäpple
 latin: Punica granatum
+dead: true
 tags:
   - frukt
 ---
