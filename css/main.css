@@ -149,3 +149,12 @@ nav a:hover {
 .out-of-stock .info span {
   text-decoration: line-through;
 }
+
+
+.plant-archive picture {
+  mix-blend-mode: multiply;
+}
+
+.plant-archive article > img {
+  display: none;
+}

@@ -11,19 +11,11 @@ url: /växter/
   Gården ligger i zon 4. Men bl.a. Svarthallon 'Munger' (zon 3) och Hösthallon 'Diana' (zon 1-2) övervintrar pålitligt.
 </p>
 <link rel="stylesheet" href="{{ '/css/product-row.css' | url }}">
-<ul>
-{% for tag in search.tags("type=plants") %}
-  <li><a href="#{{ tag }}">{{ tag | tagName }}</a>
-{% endfor %}
-</ul>
-{% for tag in search.tags("type=plants") %}
-  <div class="feeds">
-    <section class="post-feed">
-      <h2 id="{{ tag }}">{{ tag | tagName }}</h2>
-      <div class="feed-columns">
-        {% set plantslist = search.pages(tag, "order latin") %}
-        {% include "templates/plants-list.njk" %}
-      </div>
-    </section>
-  </div>
-{% endfor %}
+<div class="plant-archive">
+  <section class="post-feed">
+    <div class="feed-columns">
+      {% set plantslist = search.pages("type=plants", "order latin") %}
+      {% include "templates/plants-list.njk" %}
+    </div>
+  </section>
+</div>

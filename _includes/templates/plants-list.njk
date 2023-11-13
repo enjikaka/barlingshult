@@ -1,15 +1,16 @@
+{% import "./macros.njk" as macros %}
 {% for plant in plantslist %}
   {% if not plant.data.disabled %}
+    {{ macros.plant_header_image(plant.data.latin) }}
     <article class="product-row {% if plant.data.dead %} dead{% endif %}">
       <header class="product-header">
-        {{ plant.data.content | findImgTag | safe }}
         <div class="info">
           <h3>{{ plant.data.name }} {% if plant.data.sort %}'{{ plant.data.sort }}'{% endif %}</h3>
           <em>{{ plant.data.latin }}</em>
         </div>
       </header>
       {% if plant.data.dead %}<p><strong><small>DÖTT</small></strong></p>{% endif %}
-      {{ plant.data.content | md | findParagraphTag | safe }}
+      {{ plant.data.content | safe }}
     </article>
   {% endif %}
 {% endfor %}

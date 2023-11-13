@@ -3,13 +3,19 @@ import date from "lume/plugins/date.ts";
 import postcss from "lume/plugins/postcss.ts";
 import terser from "lume/plugins/terser.ts";
 
-import squoosh from "https://deno.land/x/lume_plugin_squoosh@v0.0.12/index.ts";
+import picture from "lume/plugins/picture.ts";
+import imagick from "lume/plugins/imagick.ts";
 
 import { DOMParser } from 'lume/deps/dom.ts';
 
 const site = lume({
-  location: new URL('https://barlingshult.se/'),
-  slugifyUrls: false
+  location: new URL('https://barlingshult.se/')
+}, {
+  nunjucks: {
+    options: {
+      throwOnUndefined: true,
+    },
+  }
 });
 
 site.ignore('README.md');
@@ -17,7 +23,12 @@ site.ignore('README.md');
 site.use(postcss());
 site.use(terser());
 site.use(date());
-site.use(squoosh());
+
+
+site.use(picture());
+site.use(imagick());
+
+// site.use(squoosh());
 
 /*
 site.loadAssets([".js"], textLoader);
@@ -30,6 +41,8 @@ site.filter(
   'head',
   (array = [], n) => (n < 0) ? array.slice(n) : array.slice(0, n),
 );
+
+site.filter('latinPlantLogo', text => `/img/logo/${text.toLocaleLowerCase().split(' ').join('-')}.png`);
 
 site.filter('findImgTag', text => {
   const parser = new DOMParser();
@@ -45,15 +58,6 @@ site.filter('findImgSrc', text => {
   const img = document.querySelector('img');
 
   return img ? img.getAttribute('src').replace('.jpg', '_60w.webp') : '';
-});
-
-
-site.filter('findParagraphTag', text => {
-  const parser = new DOMParser();
-  const document = parser.parseFromString(text, 'text/html');
-  const img = document.querySelector('p');
-
-  return img ? img.outerHTML : '';
 });
 
 site.filter('findTextContent', text => {
