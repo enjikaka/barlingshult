@@ -15,8 +15,8 @@ tags:
   - jämtland
 ---
 
-<img src="/img/fro-jamtlandsk.jpg" width="60" data-srcset="1x, 1.5x, 2x" alt="Jämtländsk gråärt" class="thumb">
-<img src="/img/fro-jamtlandsk.jpg" width="256" data-srcset="1x, 1.5x, 2x" alt="Jämtländsk gråärt">
+<img src="/img/fro-jamtlandsk.jpg" width="60" imagick="avif webp 60@1,1.5,2" alt="Jämtländsk gråärt" class="thumb">
+<img src="/img/fro-jamtlandsk.jpg" width="256" imagick="avif webp 256@1,1.5,2" alt="Jämtländsk gråärt">
 
 Den jämtländska gråärten är en tidig småfröig gråärt med högt proteininnehåll. Den blir ca en meter hög och är anpassad för den korta odlingssäsongen runt Storsjön i Jämtland.
 

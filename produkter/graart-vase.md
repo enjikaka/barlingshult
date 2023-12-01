@@ -15,8 +15,8 @@ tags:
   - värmland
 ---
 
-<img src="/img/fro-vase.jpg" width="60" data-srcset="1x, 1.5x, 2x" alt="Gråärt Väse" class="thumb">
-<img src="/img/fro-vase.jpg" width="256" data-srcset="1x, 1.5x, 2x" alt="Gråärt Väse">
+<img src="/img/fro-vase.jpg" width="60" imagick="avif webp 60@1,1.5,2" alt="Gråärt Väse" class="thumb">
+<img src="/img/fro-vase.jpg" width="256" imagick="avif webp 256@1,1.5,2" alt="Gråärt Väse">
 
 'Väse' är en medelhög gråärt med ursprung i Värmland. Efter vackra violetta blommor ger den rikt med ärter. Traditionellt samodlad med potatis, som ger ärten stöd. Bevarandevärd då den är en av få åkergrödor från Värmland.
 

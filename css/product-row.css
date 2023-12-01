@@ -36,3 +36,7 @@
 .product-row p {
   margin-top: 1rem;
 }
+
+.product-row + .product-row {
+  margin-top: var(--gr-em);
+}

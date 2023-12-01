@@ -1,11 +1,11 @@
 ---
-title: Bloggarkiv
+title: Blogg
 layout: layouts/main.njk
-url: /inlägg/
+url: /blogg/
 ---
 <div class="feeds">
-  <section class="post-feed">
-    <h1>Blogginlägg</h1>
+  <section class="gradient-box">
+    <h1>Blogg</h1>
     <div class="feed-grid">
       {% set postslist = search.pages("type=posts") %}
       {% include "templates/posts-list.njk" %}

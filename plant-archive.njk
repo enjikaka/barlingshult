@@ -1,9 +1,10 @@
 ---
-title: Växter
+title: Odling
 layout: layouts/main.njk
-url: /växter/
+url: /odling/
 ---
-<h1>Växter på gården</h1>
+<h1>Odling</h1>
+<h2>Växter på gården</h2>
 <p>
   Den biologiska mångfalden är viktig. Inte bara för pollinatörer — inklusive våra nordiska honungsbin — utan även för övriga insekter och djur. Små fåglar söker skydd bland buskar och fjärilar är beroende av vissa speciella värdväxter för sin överlevnad. Med detta i åtanke arbetas det på gården för en god mångfald av variation av både arter och sortvarianter inom arter. Inte bara blir trädgården finare och fjärilarna fler, men även honungen smakar extra gott.
 </p>
@@ -12,7 +13,7 @@ url: /växter/
 </p>
 <link rel="stylesheet" href="{{ '/css/product-row.css' | url }}">
 <div class="plant-archive">
-  <section class="post-feed">
+  <section class="gradient-box">
     <div class="feed-columns">
       {% set plantslist = search.pages("type=plants", "order latin") %}
       {% include "templates/plants-list.njk" %}

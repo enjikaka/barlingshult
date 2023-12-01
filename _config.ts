@@ -1,7 +1,11 @@
 import lume from "lume/mod.ts";
+
 import date from "lume/plugins/date.ts";
 import postcss from "lume/plugins/postcss.ts";
 import terser from "lume/plugins/terser.ts";
+
+import slugifyUrls from "lume/plugins/slugify_urls.ts";
+import resolveUrls from "lume/plugins/resolve_urls.ts";
 
 import picture from "lume/plugins/picture.ts";
 import imagick from "lume/plugins/imagick.ts";
@@ -24,18 +28,13 @@ site.use(postcss());
 site.use(terser());
 site.use(date());
 
+site.use(slugifyUrls());
 
 site.use(picture());
 site.use(imagick());
 
-// site.use(squoosh());
-
-/*
-site.loadAssets([".js"], textLoader);
-site.process([".js"], page => {
-  console.log(page.src.path + page.src.ext + ' -> ' + page.dest.path + page.dest.ext);
-});
-*/
+site.copy('/img/bgs');
+site.copy('/fonts');
 
 site.filter(
   'head',

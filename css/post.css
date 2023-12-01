@@ -1,12 +1,11 @@
-.post h1 {
-  text-align: center;
-  font-size: 1.4em;
-  margin-top: 1.4rem;
+.post {
+  color: rgb(39 2 1);
+  background-image: url('/img/bgs/grain.svg'), var(--yellow-gradient);
+  background-blend-mode: multiply;
 }
 
-.post-body {
-  max-width: 100ex;
-  margin: 0 auto;
+.post h1 {
+  font-size: calc(var(--gr-em) * 1.2);
 }
 
 date-header {
@@ -32,12 +31,16 @@ picture {
   margin: 2rem auto;
   user-select: none;
   pointer-events: none;
-  box-shadow: 0 2px 4px black;
-  border: 10px solid white;
+  border: calc(var(--gr-rem) / 8) solid currentcolor;
 }
 
 img {
+  display: block;
   width: 100%;
+}
+
+.product picture {
+  width: 300px;
 }
 
 .post header,
