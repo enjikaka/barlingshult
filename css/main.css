@@ -1,26 +1,15 @@
 :root {
-  --app-bg: #FAF5EE;
-  --green: rgb(41 62 32);
-  --light-green: rgb(97 162 117);
-  --dark-green: rgb(70 91 62);
-  --black-green: rgb(50 51 21);
-  --off-white: oklch(0.96 0.01 0);
-  --darker-off-white: oklch(0.94 0.01 0);
-  --dark: #5B3C5C;
-  --dark-brown: rgb(59 56 19);
-  --off-gold: rgb(142 118 67);
-  --light: #FAF5EE;
-  --action-color: #8180C3;
-  --action-text: #94647C;
-  --title-text: #DAA4B6;
+  --off-white: rgb(253, 246, 218);
+  --green: rgb(10, 90, 41);
+  --orange: rgb(253, 138, 47);
+  --red: oklch(0.54 0.19 23.19);
+  --red-darker: oklch(0.44 0.19 23.19);
+  --red-darkest: oklch(0.34 0.19 23.19);
+  --black: rgb(22, 22, 22);
+
   --gr: 1.61803398875;
   --gr-rem: calc(1rem * var(--gr));
   --gr-em: calc(1em * var(--gr));
-
-  --green-gradient: linear-gradient(to bottom, rgb(86 112 70), rgb(6 1 0));
-  --yellow-gradient: linear-gradient(to bottom, rgb(227 172 76), rgb(144 75 23));
-  --light-purple-gradient: linear-gradient(to bottom, rgb(255 255 255), rgb(122 98 145));
-  --brown-gradient: linear-gradient(to bottom, rgb(87 42 36), rgb(62 26 28));
 }
 
 @font-face {
@@ -30,83 +19,66 @@
   font-style: normal;
 }
 
+@font-face {
+  font-family: "Regards";
+  src: url("/fonts/regards.woff2") format("woff2");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Proxima Nova";
+  src: url("/fonts/proxima-nova.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Proxima Nova";
+  src: url("/fonts/proxima-nova-500.woff2") format("woff2");
+  font-weight: 500;
+  font-style: normal;
+}
+
 figure.rune {
   font-family: "Runes";
   font-size: 2rem;
   margin: -1rem auto 1rem;
   width: 100%;
   text-align: center;
+  background-color: var(--red);
+  background-image: linear-gradient(to bottom, var(--red), var(--red-darker));
+  border: 4px solid var(--red-darker);
+  color: white;
+  width: 61px;
+  height: 64px;
+  line-height: 70px;
+  border-radius: 50%;
+  padding-left: 3px;
+  contain: strict;
+  contain-intrinsic-size: 64px 64px;
+  margin-top: -64px;
+  box-shadow: 0 2px 2px var(--red-darkest);
 }
 
 html,
 body {
   margin: 0;
-  font-family: 'Rubik', sans-serif;
+  font-family: 'Proxima Nova', sans-serif;
   padding: 1em;
-  background-color: var(--darker-off-white);
+  background-color: var(--off-white);
 }
 
-strong, h1, h2, h3, address {
-  font-family: 'Hedvig Letters Serif', cursive;
-}
-
-.gradient-box {
-  color: rgb(226 181 111);
-  background-image: url('/img/bgs/grain.svg'), var(--green-gradient);
-  background-blend-mode: multiply;
-}
-
-.gradient-box.yellow {
-  color: rgb(39 2 1);
-  background-image: url('/img/bgs/grain.svg'), var(--yellow-gradient);
-}
-
-.gradient-box.brown {
-  color: rgb(196 127 72);
-  background-image: url('/img/bgs/grain.svg'), var(--brown-gradient);
+strong, h1, h2 {
+  font-family: 'Regards', cursive;
 }
 
 .gradient-box {
-  --outer-color: var(--dark-brown);
-  --inner-color: var(--off-gold);
-  --border-size: 1.5px;
-  border: var(--border-size) solid var(--inner-color);
-  outline: var(--border-size) solid var(--outer-color);
-  padding: calc(var(--gr-rem) * 2);
-  box-shadow: inset 0 0 10px var(--outer-color);
-  position: relative;
-}
-
-.gradient-box::before {
-  content: "";
-  --size: calc(var(--gr-rem) / 2);
-  width: var(--size);
-  height: var(--size);
-  display: block;
-  position: absolute;
-  top: var(--size);
-  left: var(--size);
-  border: var(--border-size) solid var(--inner-color);
-  outline: var(--border-size) solid var(--outer-color);
-  border-right: 0;
-  border-bottom: 0;
-  clip-path: inset(-1px 0 0 -1px);
-}
-
-.gradient-box::after {
-  content: "";
-  --size: calc(var(--gr-rem) / 2);
-  width: var(--size);
-  height: var(--size);
-  display: block;
-  position: absolute;
-  top: var(--size);
-  right: var(--size);
-  border: var(--border-size) solid var(--inner-color);
-  outline: var(--border-size) solid var(--outer-color);
-  border-left: 0;
-  border-bottom: 0;
-  clip-path: inset(-1px -1px 0 0);
+  background-color: white;
+  padding: var(--gr-rem);
+  border-radius: 4px;
+  border-top: 8px solid var(--red);
+  margin-block-start: var(--gr-rem);
 }
 
 .site-footer,
@@ -122,8 +94,7 @@ strong, h1, h2, h3, address {
 
 .site-header strong {
   font-size: calc(1.5rem * var(--gr));
-  color: rgb(28 44 33);
-  font-family: 'Averia Serif Libre', sans-serif;
+  color: var(--green);
 }
 
 .site-navigation {
@@ -136,11 +107,11 @@ strong, h1, h2, h3, address {
 .site-navigation a {
   font-size: 0.8rem;
   flex: 1;
-  color: rgb(196 127 72);
-  background-image: url('/img/bgs/grain.svg'), linear-gradient(to bottom, rgb(42 27 36), rgb(30 12 27));
-  background-blend-mode: multiply;
-  border: 2px solid var(--off-gold);
-  padding: calc(var(--gr-em) / 2);
+  background-color: var(--orange);
+  padding: calc(var(--gr-em) / 1.5) calc(var(--gr-em) / 2);
+  color: white;
+  font-weight: 500;
+  border-radius: 4px;
   text-align: center;
   text-transform: uppercase;
 }
