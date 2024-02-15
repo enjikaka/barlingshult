@@ -1,6 +1,6 @@
 ---
 title: Odling
-layout: layouts/main.njk
+layout: layouts/main.vto
 url: /odling/
 ---
 <h1>Odling</h1>
@@ -11,12 +11,12 @@ url: /odling/
 <p>
   Gården ligger i zon 4. Men bl.a. Svarthallon 'Munger' (zon 3) och Hösthallon 'Diana' (zon 1-2) övervintrar pålitligt.
 </p>
-<link rel="stylesheet" href="{{ '/css/product-row.css' | url }}">
+<link rel="stylesheet" href="{{ '/css/product-row.css' |> url }}">
 <div class="plant-archive">
   <section class="gradient-box">
     <div class="feed-columns">
-      {% set plantslist = search.pages("type=plants", "order latin") %}
-      {% include "templates/plants-list.njk" %}
+      {{ set plantslist = search.pages("type=plants", "order latin") }}
+      {{ include "templates/plants-list.vto" }}
     </div>
   </section>
 </div>

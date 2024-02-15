@@ -1,65 +1,65 @@
 ---
-layout: layouts/main.njk
+layout: layouts/main.vto
 bodyClass: body-post
 ---
-<link rel="stylesheet" href="{{ '/css/post.css' | url }}">
-<link rel="stylesheet" href="{{ '/css/product.css' | url }}">
-<script type="module" src="{{ '/js/local-month-name.js' | url }}"></script>
+<link rel="stylesheet" href="{{ '/css/post.css' |> url }}">
+<link rel="stylesheet" href="{{ '/css/product.css' |> url }}">
+<script type="module" src="{{ '/js/local-month-name.js' |> url }}"></script>
 <nav>
   <a href="/produkter">&#8249; Övriga produkter</a>
 </nav>
 <article class="post gradient-box product">
   <h1 class="post-title">
-    {{ name }} {% if sort %}'{{ sort }}'{% endif %}
+    {{ name }} {{ if it.sort }}'{{ sort }}'{{ /if }}
   </h1>
 
   <div class="post-body">
-    {{ content | safe }}
+    {{ content |> safe }}
 
-    {% if tags.includes("chili") %}
+    {{ if tags.includes("chili") }}
       <p>
         Plantan är ca 10-15 cm vid leverans. Bör planeras om i större kruka så fort som möjligt. Kan leva resten av sitt liv i kruka över 5 L inomhus i ljust fönster eller planteras utomhus när tempteraturen om natten inte understiger 10 grader. Bevaras den i kruka så är det viktigt att tänka på att chiliplantan är flerårig. Släng den alltså inte efter skörd utan låt den övervintra ljust inomhus.
       </p>
-    {% endif %}
+    {{ /if }}
 
     <dl>
       <dt>I lager</dt>
-      <dd>{% if in_stock %}ja{% else %}nej{% endif %}</dd>
+      <dd>{{ if in_stock }}ja{{ else }}nej{{ /if }}</dd>
       <dt>Pris</dt>
       <dd>{{ price }} kr</dd>
       <dt>Mängd</dt>
       <dd>{{ amount }}</dd>
-      {% if tags.includes("amatörsort") %}
+      {{ if tags.includes("amatörsort") }}
       <dt>Bevarandestatus</dt>
       <dd><dfn title="Sort som inte är vanlig kommersiellt och har utvecklats för att odlas i ett särskilt klimat eller i speciella jordar."><a href="https://jordbruksverket.se/vaxter/odling/utsade-och-registrering-av-vaxtsorter/registrering-av-nya-sorter-och-vaxtforadlarratter#h-Amatorsorter" target="_blank">Amatörsort</a></dfn></dd>
-      {% endif %}
-      {% if tags.includes("bevarandesort") %}
+      {{ /if }}
+      {{ if tags.includes("bevarandesort") }}
       <dt>Bevarandestatus</dt>
       <dd><dfn title="En bevarandesort är en lantsort eller en annan sort som har odlats före 1950 i Sverige. Våra gamla sorter är ett kulturarv som det finns många skäl till att bevara."><a href="https://jordbruksverket.se/vaxter/odling/utsade-och-registrering-av-vaxtsorter/registrering-av-nya-sorter-och-vaxtforadlarratter#h-Bevarandesorter" target="_blank">Bevarandesort</a></dfn></dd>
-      {% endif %}
-      {% if latin %}
+      {{ /if }}
+      {{ if it.latin }}
       <dt>Botaniskt namn</dt>
       <dd>{{latin}}</dd>
-      {% endif %}
-      {% if ngb %}
+      {{ /if }}
+      {{ if it.ngb }}
       <dt><dfn title="Sorteringsnummer för Nordiska Gendatabanken">NGB</dfn></dt>
       <dd>{{ngb}}</dd>
-      {% endif %}
-      {% if preSowingTime %}
+      {{ /if }}
+      {{ if it.preSowingTime }}
       <dt>Försådd</dt>
       <dd><local-month-name value="{{preSowingTime}}"></local-month-name></dd>
-      {% endif %}
-      {% if directSowingTime %}
+      {{ /if }}
+      {{ if it.directSowingTime }}
       <dt>Direktsådd</dt>
       <dd><local-month-name value="{{directSowingTime}}"></local-month-name></dd>
-      {% endif %}
-      {% if tags.includes("grönt kulturarv") %}
+      {{ /if }}
+      {{ if tags.includes("grönt kulturarv") }}
           <figure>
             <a href="https://www.slu.se/centrumbildningar-och-projekt/programmet-for-odlad-mangfald-pom/gront-kulturarv/om-gront-kulturarv/" title="Läs mer om Grönt Kulturarv" target="_blank">
               <svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" width="128" viewBox="0 0 190 162.2"><path d="M43 54h44V34c0-14-2-24-8-28-5-4-17-6-36-6C25 0 14 3 8 8c-5 6-8 17-8 34 0 22 1 36 3 42 3 7 7 12 13 14 6 3 15 4 29 4 18 0 29-2 34-6 6-4 8-12 8-25H68c0 6-2 11-4 12-3 2-9 2-19 2-11 0-18-1-21-4-3-2-5-9-5-19V39c0-10 2-16 5-19 3-2 10-4 20-4 11 0 17 1 20 4 3 2 4 7 4 16v4H43v14M129 51h27c6 0 11 1 13 3s3 7 3 14-1 12-3 14-6 3-12 3h-28zM110 1v100h49c12 0 21-2 25-7 5-4 7-11 7-23 0-10-1-17-3-20-3-4-7-7-14-8v-1c11 0 16-7 16-19V1h-19v18c0 10-5 16-15 16h-27V1h-19M273 125v-12h-13v12zm-28 0v-12h-13v12zm7-40c-12 0-20-1-22-4-2-4-3-15-3-34 0-15 1-23 4-26 2-3 10-5 22-5s19 2 21 5c2 4 4 14 4 30 0 17-2 27-4 30s-9 4-22 4zm2 17c18 0 30-3 35-9s8-20 8-41c0-23-3-37-8-43s-18-9-38-9c-18 0-30 3-35 9-6 6-8 19-8 39 0 24 2 38 7 45 6 6 18 9 39 9M410 101V1h-32l-29 55-6 14-4 7-3 7h-1l1-6V1h-19v100h32l26-51 8-16 4-8 4-9h1l-1 7v77h19M473 84V1h-19v83h-28v17h77V84h-30M584 101V60h9l33 41h24l-40-49 44-51h-24l-37 43h-9V1h-19v100h19M730 101h19V34c0-14-3-23-8-27-5-5-16-7-33-7s-29 2-34 6c-5 5-8 14-8 27v68h19V33c0-7 1-12 4-14 2-2 9-3 18-3 10 0 17 1 19 3 3 2 4 7 4 15v67M793 101V18h47V1h-66v100h19M882 84V1h-19v83h-29v17h78V84h-30M991 101h19V34c0-14-2-23-8-27-5-5-16-7-33-7s-28 2-34 6c-5 5-8 14-8 27v68h19V33c0-7 1-12 4-14s9-3 19-3 16 1 18 3c3 2 4 7 4 15v67M1051 51h27c7 0 11 1 13 3s4 7 4 14-1 12-3 14-6 3-12 3h-29zm-19-50v100h49c13 0 21-2 26-7 4-4 7-11 7-23 0-10-1-17-4-20-2-4-7-7-14-8v-1c11 0 17-7 17-19V1h-19v18c0 10-5 16-16 16h-27V1h-19M1193 34l-18 52-17-52zm4-14h-43l-6-19h-20l33 100h28l34-100h-19l-7 19M1258 51h27c7 0 11 1 13 3s3 7 3 14-1 12-3 14c-1 2-5 3-12 3h-28zm-19-50v100h49c12 0 21-2 26-7 4-4 6-11 6-23 0-10-1-17-3-20-2-4-7-7-14-8v-1c11 0 16-7 16-19V1h-19v18c0 10-5 16-15 16h-27V1h-19M1405 101h20L1393 1h-29l-32 100h20l18-57 8-27h1l2 7 6 20 18 57M705 235c14 125 94 169 184 192-42 59-99 90-177 99h-19c-82-11-140-44-175-101 102-26 163-90 180-190h7M722 924l291 191c-40 30-84 55-131 72l-160-106V924M682 917v158l-157 107c-52-21-99-50-140-85l297-180M682 671v199l-328 199c-46-47-83-102-108-164l436-234M682 569v56L233 867a500 500 0 0 1-21-193l321-167c39 32 88 53 149 62M722 1129l110 73c-35 9-72 14-110 15v-88M722 876V676l429 277c-27 51-63 97-106 136L722 876M890 492c18-18 34-39 49-63l1-2c47-7 91-29 124-63 84 83 137 196 145 321L890 492M1169 917 722 629v-60c52-6 97-22 135-49l353 212c-2 65-16 128-41 185M472 428c9 18 19 35 32 49L218 625c18-96 64-183 128-252 33 32 76 51 126 55M682 1123v93c-38-2-75-8-110-18l110-75" style="fill:#231f20;fill-opacity:1;fill-rule:nonzero;stroke:none" transform="matrix(.13333 0 0 -.13333 0 162)"/><path d="M515 388c-54 9-107-10-141-43 77-68 176-114 284-124h1c-12 87-57 145-144 167M905 387c-13 0-24-2-35-5-37-13-66-31-87-58a172 172 0 0 1-26-50c-5-16-8-33-10-53h14c105 10 200 52 276 117-35 34-84 53-132 49" style="fill:#231f20;fill-opacity:1;fill-rule:nonzero;stroke:none" transform="matrix(.13333 0 0 -.13333 0 162)"/></svg>
             </a>
           </figure>
-        {% endif %}
+        {{ /if }}
     </dl>
 
     <footer>
@@ -69,7 +69,7 @@ bodyClass: body-post
         </a>
       </figure>
       <p>
-      Handla av oss i <a href="https://www.facebook.com/groups/676367736170080" target="_blank" title="Besök Facebook-gruppen för REKO-ringen i Arvika">Arvika</a>, <a href="https://www.facebook.com/groups/456724534933412" target="_blank" title="Besök Facebook-gruppen för REKO-ringen i Årjäng">Årjäng</a> eller <a href="https://www.facebook.com/groups/124288634806869" target="_blank" title="Besök Facebook-gruppen för REKO-ringen i Karlstad">Karlstad</a> REKO-ringar. {% if tags.includes("frö") %}Frön kan beställas via e-post och skickas med brev. Allt utsäde kommer från våra egna plantor på gården. {% endif %}
+      Handla av oss i <a href="https://www.facebook.com/groups/676367736170080" target="_blank" title="Besök Facebook-gruppen för REKO-ringen i Arvika">Arvika</a>, <a href="https://www.facebook.com/groups/456724534933412" target="_blank" title="Besök Facebook-gruppen för REKO-ringen i Årjäng">Årjäng</a> eller <a href="https://www.facebook.com/groups/124288634806869" target="_blank" title="Besök Facebook-gruppen för REKO-ringen i Karlstad">Karlstad</a> REKO-ringar. {{ if tags.includes("frö") }}Frön kan beställas via e-post och skickas med brev. Allt utsäde kommer från våra egna plantor på gården. {{ /if }}
       </p>
     </footer>
   </div>
@@ -78,12 +78,12 @@ bodyClass: body-post
 {
   "@context": "https://schema.org/",
   "@type": "Product",
-  "name": "{{ name }} {% if sort %}'{{ sort }}'{% endif %}",
-  "description": "{{ content | findTextContent | truncate(50) }}",
-  "image": ["{{ content | findImgSrc }}"],
+  "name": "{{ name }}{{ if sort }}'{{ sort }}'{{ /if }}",
+  "description": "{{ content |> findTextContent |> truncate(50) }}",
+  "image": ["{{ content |> findImgSrc }}"],
   "offers": {
     "@type": "Offer",
-    "availability": "https://schema.org/{% if in_stock %}InStock{% else %}OutOfStock{% endif %}",
+    "availability": "https://schema.org/{{ if in_stock }}InStock{{ else }}OutOfStock{{ /if }}",
     "priceCurrency": "SEK",
     "price": "{{ price }}",
     "priceValidUntil": "2022-12-31"

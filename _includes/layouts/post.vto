@@ -1,29 +1,29 @@
 ---
-layout: layouts/main.njk
+layout: layouts/main.vto
 bodyClass: body-post
 ---
-<script type="module" src="{{ '/js/local-date.js' | url }}"></script>
-<link rel="stylesheet" href="{{ '/css/post.css' | url }}">
+<script type="module" src="{{ '/js/local-date.js' |> url }}"></script>
+<link rel="stylesheet" href="{{ '/css/post.css' |> url }}">
 <article class="post gradient-box" itemscope itemtype="http://schema.org/Article">
   <h1 class="post-title" itemprop="headline">{{ title }}</h1>
 
   <nav class="post-tags">
-  {% for tag in tags %}
-    {% set tagUrl %}/tags/{{ tag }}/{% endset %}
-    <a href="{{ tagUrl | url }}" class="tag">{{ tag }}</a>
-  {% endfor %}
+  {{ for tag of tags }}
+    {{ set tagUrl }}/tags/{{ tag }}/{{ /set }}
+    <a href="{{ tagUrl |> url }}" class="tag">{{ tag }}</a>
+  {{ /for }}
   </nav>
 
   <div class="post-body" itemprop="articleBody">
-    {{ content | safe }}
+    {{ content |> safe }}
   </div>
 
   <footer>
-    {% if author %}
+    {{ if author }}
       <div itemprop="author" itemscope itemtype="http://schema.org/Person">
         Skrivet av <span itemprop="name">{{ author }}</span>
       </div>
-    {% endif %}<br>
-    <local-date datetime="{{ date | date('DATETIME') }}"></local-date>
+    {{ /if }}<br>
+    <local-date datetime="{{ date |> date('DATETIME') }}"></local-date>
   </footer>
 </article>

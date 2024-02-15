@@ -1,14 +1,14 @@
 ---
 title: Start
-layout: layouts/main.njk
+layout: layouts/main.vto
 ---
 <div class="feeds">
   <section class="gradient-box">
     <figure class="rune">B</figure>
     <h1>Blogg</h1>
     <div class="feed-grid">
-      {% set postslist = search.pages("type=posts") | head(-4) %}
-      {% include "templates/posts-list.njk" %}
+      {{ set postslist = search.pages("type=posts") |> head(-4) }}
+      {{ include "templates/posts-list.vto" }}
     </div>
     <a href="/blogg/" class="archive-link">Visa fler...</a>
   </section>
@@ -16,16 +16,16 @@ layout: layouts/main.njk
     <figure class="rune">H</figure>
     <h1>Historier</h1>
     <div class="feed-grid">
-      {% set postslist = search.pages("type=historic-sources") | head(-4) %}
-      {% include "templates/posts-list.njk" %}
+      {{ set postslist = search.pages("type=historic-sources") |> head(-4) }}
+      {{ include "templates/posts-list.vto" }}
     </div>
   </section>
   <section class="gradient-box">
     <figure class="rune">O</figure>
     <h1>Odling</h1>
     <div class="feed-columns">
-      {% set plantslist = search.pages("type=plants") | head(-4) %}
-      {% include "templates/plants-list.njk" %}
+      {{ set plantslist = search.pages("type=plants") |> head(-4) }}
+      {{ include "templates/plants-list.vto" }}
     </div>
     <a href="/växter/" class="archive-link">Visa fler...</a>
   </section>
@@ -33,8 +33,8 @@ layout: layouts/main.njk
     <figure class="rune">P</figure>
     <h1>Produkter</h1>
     <nav class="feed-grid">
-      {% set productslist = search.pages("type=products") | head(-4) %}
-      {% include "templates/products-list.njk" %}
+      {{ set productslist = search.pages("type=products") |> head(-4) }}
+      {{ include "templates/products-list.vto" }}
     </nav>
     <a href="/produkter/" class="archive-link">Visa fler...</a>
   </section>

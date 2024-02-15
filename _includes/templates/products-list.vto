@@ -1,0 +1,11 @@
+{{ for product of productslist }}
+  <div class="product-row{{ if !product.in_stock }} out-of-stock{{ /if }}">
+    <a href="{{ product.url |> url }}" class="product-header">
+      {{ product.content |> findImgTag |> safe }}
+      <div class="info">
+        <span>{{ product.name }} {{ if product.sort }}'{{ product.sort }}'{{ /if }}</span>
+        {{ if !product.in_stock }}<small>Inte i lager</small>{{ /if }}
+      </div>
+    </a>
+  </div>
+{{ /for }}

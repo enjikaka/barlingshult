@@ -1,14 +1,14 @@
 ---
 title: Blogg
-layout: layouts/main.njk
+layout: layouts/main.vto
 url: /blogg/
 ---
 <div class="feeds">
   <section class="gradient-box">
     <h1>Blogg</h1>
     <div class="feed-grid">
-      {% set postslist = search.pages("type=posts") %}
-      {% include "templates/posts-list.njk" %}
+      {{ set postslist = search.pages("type=posts") }}
+      {{ include "templates/posts-list.vto" }}
     </div>
   </section>
 </div>

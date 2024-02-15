@@ -1,2 +1,2 @@
 type: products
-layout: layouts/product.njk
+layout: layouts/product.vto

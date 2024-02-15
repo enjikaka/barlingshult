@@ -1,7 +1,0 @@
-{% set used_plants = [] %}
-{% macro plant_header_image(name) %}
-  {% if not used_plants.includes(name) %}
-  {% set used_plants = (used_plants.push(name), used_plants) %}
-  <img src="{{ name | latinPlantLogo }}" imagick="avif webp 300@1.5,2">
-  {% endif %}
-{% endmacro %}

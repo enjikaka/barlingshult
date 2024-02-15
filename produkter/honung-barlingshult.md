@@ -7,7 +7,7 @@ in_stock: true
 tags:
   - honung
   - nordiska bin
-  - glaskogen 
+  - glaskogen
 ---
 
 Honung från bikupor i Barlingshult, Glaskogen. Här flyger nordiska bin runt i naturreservatet och samlar nektar och pollen från obesprutade marker.

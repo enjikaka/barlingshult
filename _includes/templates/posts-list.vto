@@ -1,0 +1,24 @@
+{{ for post of postslist |> reverse }}
+  <article>
+    <a href="{{ post.url |> url }}">
+      {{ if post.title }}
+        <strong class="post-list--title">{{ post.title }}</strong>
+      {{ else }}
+        <code>{{ post.url }}</code>
+      {{ /if }}
+
+      <p>
+      {{ post.content |> striptags |> truncate(200) |> trim }}
+      </p>
+
+      <time class="post-list--date" datetime="{{ post.date |> date('DATETIME') }}">
+        {{ post.date |> toISODate }}
+      </time>
+    </a>
+
+    {{ for tag of post.tags }}
+      {{ set tagUrl }}/tags/{{ tag }}/{{ /set }}
+      <a href="{{ tagUrl |> url }}" class="tag">{{ tag }}</a>
+    {{ /for }}
+</article>
+{{ /for }}
