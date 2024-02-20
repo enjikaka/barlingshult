@@ -11,8 +11,8 @@ tags:
   - frö
 ---
 
-<img src="/img/fro-tranbar.jpg" width="60" imagick="avif webp 60@1,1.5,2" alt="Störböna Äkta tranbär" class="thumb">
-<img src="/img/fro-tranbar.jpg" width="256" imagick="avif webp 256@1,1.5,2" alt="Störböna Äkta tranbär">
+<img src="/img/fro-tranbar.jpg" width="60" transform-images="avif webp 60@1,1.5,2" alt="Störböna Äkta tranbär" class="thumb">
+<img src="/img/fro-tranbar.jpg" width="256" transform-images="avif webp 256@1,1.5,2" alt="Störböna Äkta tranbär">
 
 En störböna som får vinröda, runda och välsmakande bönor. Nötig smak. Högväxande och ger god skörd.
 

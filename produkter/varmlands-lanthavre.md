@@ -10,8 +10,8 @@ tags:
   - frö
 ---
 
-<img src="/img/fro-havre.jpg" width="60" imagick="avif webp 60@1,1.5,2" alt="Lanthavre från Värmland" class="thumb">
-<img src="/img/fro-havre.jpg" width="256" imagick="avif webp 256@1,1.5,2" alt="Lanthavre från Värmland">
+<img src="/img/fro-havre.jpg" width="60" transform-images="avif webp 60@1,1.5,2" alt="Lanthavre från Värmland" class="thumb">
+<img src="/img/fro-havre.jpg" width="256" transform-images="avif webp 256@1,1.5,2" alt="Lanthavre från Värmland">
 
 Lanthavre från Värmland är en nordisk vithavre. Gamla sorter av vithavre skiftar mindre i skördemängd när det utsätts för olika jordar och vattenmängd än moderna sorter. Förra året planterades 12 gram här vilket gav lite över 272 gram skörd.
 

@@ -13,8 +13,8 @@ tags:
   - frö
 ---
 
-<img src="/img/fro-mor-kristin.jpg" width="60" imagick="avif webp 60@1,1.5,2" alt="Kokböna Mor Kristin" class="thumb">
-<img src="/img/fro-mor-kristin.jpg" width="256" imagick="avif webp 256@1,1.5,2" alt="Kokböna Mor Kristin">
+<img src="/img/fro-mor-kristin.jpg" width="60" transform-images="avif webp 60@1,1.5,2" alt="Kokböna Mor Kristin" class="thumb">
+<img src="/img/fro-mor-kristin.jpg" width="256" transform-images="avif webp 256@1,1.5,2" alt="Kokböna Mor Kristin">
 
 En lättodlad kulturarvsböna från Kisa i Östergötland. Blommar tidigt med ljusrosa blommor.
 
