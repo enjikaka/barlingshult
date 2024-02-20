@@ -1,6 +1,6 @@
 :root {
-  --off-white: rgb(253, 246, 218);
-  --green: rgb(10, 90, 41);
+  --off-white: rgb(239 237 225);
+  --green: rgb(66 92 96);
   --orange: rgb(253, 138, 47);
   --red: oklch(0.54 0.19 23.19);
   --red-darker: oklch(0.44 0.19 23.19);
@@ -20,9 +20,9 @@
 }
 
 @font-face {
-  font-family: "Regards";
-  src: url("/fonts/regards.woff2") format("woff2");
-  font-weight: normal;
+  font-family: "Montagu Slab";
+  font-optical-sizing: auto;
+  font-weight: 700;
   font-style: normal;
 }
 
@@ -64,13 +64,17 @@ figure.rune {
 html,
 body {
   margin: 0;
-  font-family: 'Proxima Nova', sans-serif;
+  font-family: 'Rubik', sans-serif;
   padding: 1em;
   background-color: var(--off-white);
 }
 
 strong, h1, h2 {
-  font-family: 'Regards', cursive;
+  font-family: 'Hedvig Letters Serif', sans-serif;
+}
+
+.site-header strong {
+  font-family: 'Averia Serif Libre', sans-serif;
 }
 
 .gradient-box {
