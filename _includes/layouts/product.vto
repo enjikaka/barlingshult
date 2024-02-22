@@ -9,9 +9,11 @@ bodyClass: body-post
   <a href="/produkter">&#8249; Övriga produkter</a>
 </nav>
 <article class="post gradient-box product">
-  <h1 class="post-title">
-    {{ name }} {{ if it.sort }}'{{ sort }}'{{ /if }}
-  </h1>
+  <header>
+    <h1 class="post-title">
+      {{ name }} {{ if it.sort }}'{{ sort }}'{{ /if }}
+    </h1>
+  </header>
 
   <div class="post-body">
     {{ content |> safe }}

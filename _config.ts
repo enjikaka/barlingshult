@@ -49,6 +49,8 @@ site.filter(
   (array = [], n) => (n < 0) ? array.slice(n) : array.slice(0, n),
 );
 
+site.filter("truncate", (value, length) => `${value.substring(0, length)}…`);
+
 site.filter('latinPlantLogo', text => `/img/logo/${text.toLocaleLowerCase().split(' ').join('-')}.png`);
 
 site.filter('findImgTag', text => {

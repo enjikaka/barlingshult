@@ -1,11 +1,14 @@
 :root {
-  --off-white: rgb(239 237 225);
-  --green: rgb(66 92 96);
-  --orange: rgb(253, 138, 47);
-  --red: oklch(0.54 0.19 23.19);
-  --red-darker: oklch(0.44 0.19 23.19);
-  --red-darkest: oklch(0.34 0.19 23.19);
-  --black: rgb(22, 22, 22);
+  --black: rgb(28 28 28);
+  --text: rgb(37 37 37);
+  --off-white: rgb(250 244 230);
+  --gray: rgb(238 232 220);
+
+  --green: rgb(155 171 99);
+  --yellow: rgb(245 216 104);
+  --blue: rgb(182 202 235);
+  --pink: rgb(246 184 219);
+
 
   --gr: 1.61803398875;
   --gr-rem: calc(1rem * var(--gr));
@@ -67,10 +70,7 @@ body {
   font-family: 'Rubik', sans-serif;
   padding: 1em;
   background-color: var(--off-white);
-}
-
-strong, h1, h2 {
-  font-family: 'Hedvig Letters Serif', sans-serif;
+  color: var(--text);
 }
 
 .site-header strong {
@@ -78,10 +78,6 @@ strong, h1, h2 {
 }
 
 .gradient-box {
-  background-color: white;
-  padding: var(--gr-rem);
-  border-radius: 4px;
-  border-top: 8px solid var(--red);
   margin-block-start: var(--gr-rem);
 }
 
@@ -98,7 +94,6 @@ strong, h1, h2 {
 
 .site-header strong {
   font-size: calc(1.5rem * var(--gr));
-  color: var(--green);
 }
 
 .site-navigation {
@@ -111,11 +106,12 @@ strong, h1, h2 {
 .site-navigation a {
   font-size: 0.8rem;
   flex: 1;
-  background-color: var(--orange);
+  background-color: var(--black);
+  color: var(--off-white);
   padding: calc(var(--gr-em) / 1.5) calc(var(--gr-em) / 2);
   color: white;
   font-weight: 500;
-  border-radius: 4px;
+  border-radius: 32px;
   text-align: center;
   text-transform: uppercase;
 }
@@ -151,25 +147,8 @@ main {
   flex-flow: column nowrap;
 }
 
-.feeds section h1 {
-  text-align: center;
-  margin: 0 0 1em;
-}
-
-.feed-columns {
-  column-count: auto;
-  column-width: 40ch;
-  gap: 1rem;
-}
-
 .feed-columns article {
   break-inside: avoid;
-}
-
-.feed-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(min(40ch, 100%), 1fr));
-  gap: 1rem;
 }
 
 a {
@@ -177,22 +156,26 @@ a {
   color: inherit;
 }
 
+.feed-grid article {
+  background-color: var(--gray);
+  margin: var(--gr-em);
+  padding: var(--gr-em);
+  border-radius: 8px;
+}
+
+.feed-grid article header {
+  display: flex;
+  justify-content: space-between;
+}
+
 .feed-grid .post-list--title {
   font-weight: bold;
   text-decoration: none;
   color: inherit;
-  display: block;
-  text-align: center;
 }
 
 .feed-grid article:hover .post-list--title {
   text-decoration: underline;
-}
-
-.feed-grid .post-list--date {
-  display: block;
-  text-align: center;
-  font-style: italic;
 }
 
 .windy-webcam-timelapse-player-iframe {

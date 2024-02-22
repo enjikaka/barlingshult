@@ -4,7 +4,6 @@ layout: layouts/main.vto
 ---
 <div class="feeds">
   <section class="gradient-box">
-    <figure class="rune">B</figure>
     <h1>Blogg</h1>
     <div class="feed-grid">
       {{ set postslist = search.pages("type=posts") |> head(-4) }}
@@ -13,7 +12,6 @@ layout: layouts/main.vto
     <a href="/blogg/" class="archive-link">Visa fler...</a>
   </section>
   <section class="gradient-box yellow">
-    <figure class="rune">H</figure>
     <h1>Historier</h1>
     <div class="feed-grid">
       {{ set postslist = search.pages("type=historic-sources") |> head(-4) }}
@@ -21,7 +19,6 @@ layout: layouts/main.vto
     </div>
   </section>
   <section class="gradient-box">
-    <figure class="rune">O</figure>
     <h1>Odling</h1>
     <div class="feed-columns">
       {{ set plantslist = search.pages("type=plants") |> head(-4) }}
@@ -30,7 +27,6 @@ layout: layouts/main.vto
     <a href="/växter/" class="archive-link">Visa fler...</a>
   </section>
    <section class="gradient-box brown">
-    <figure class="rune">P</figure>
     <h1>Produkter</h1>
     <nav class="feed-grid">
       {{ set productslist = search.pages("type=products") |> head(-4) }}
@@ -39,7 +35,6 @@ layout: layouts/main.vto
     <a href="/produkter/" class="archive-link">Visa fler...</a>
   </section>
   <section class="gradient-box webcam">
-    <figure class="rune">W</figure>
     <h1>Webbkamera</h1>
     <a name="windy-webcam-timelapse-player" data-id="1603222616" data-play="month" href="https://windy.com/webcams/1603222616" target="_blank">Arjang › East: Barlingshult</a><script async type="text/javascript" src="https://webcams.windy.com/webcams/public/embed/script/player.js"></script>
   </section>

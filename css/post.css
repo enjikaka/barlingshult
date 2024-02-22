@@ -1,11 +1,21 @@
 .post {
-  color: rgb(39 2 1);
-  background-image: url('/img/bgs/grain.svg'), var(--yellow-gradient);
-  background-blend-mode: multiply;
+  background-color: var(--gray);
+  border-radius: 16px;
+  overflow: hidden;
 }
 
-.post h1 {
-  font-size: calc(var(--gr-em) * 1.2);
+.post-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  font-family: "Rubik", sans-serif;
+}
+
+.post-body {
+  padding: var(--gr-em);
+}
+
+.post header {
+  background-color: var(--yellow);
 }
 
 date-header {
@@ -45,6 +55,6 @@ img {
 
 .post header,
 .post footer {
-  text-align: center;
-  padding: 1rem 0;
+  padding: calc(var(--gr-em) / 2) var(--gr-em);
+  line-height: calc(var(--gr-em) / 2);
 }

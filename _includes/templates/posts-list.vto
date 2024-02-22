@@ -1,19 +1,23 @@
 {{ for post of postslist |> reverse }}
   <article>
     <a href="{{ post.url |> url }}">
-      {{ if post.title }}
-        <strong class="post-list--title">{{ post.title }}</strong>
-      {{ else }}
-        <code>{{ post.url }}</code>
+      <header>
+          {{ if post.title }}
+            <strong class="post-list--title">{{ post.title }}</strong>
+          {{ else }}
+            <code>{{ post.url }}</code>
+          {{ /if }}
+
+          <time class="post-list--date" datetime="{{ post.date |> date('DATETIME') }}">
+            {{ post.date |> toISODate }}
+          </time>
+      </header>
+
+      {{ if post.content }}
+        <p>
+          {{ post.content |> truncate(150) |> md }}
+        </p>
       {{ /if }}
-
-      <p>
-      {{ post.content |> striptags |> truncate(200) |> trim }}
-      </p>
-
-      <time class="post-list--date" datetime="{{ post.date |> date('DATETIME') }}">
-        {{ post.date |> toISODate }}
-      </time>
     </a>
 
     {{ for tag of post.tags }}
