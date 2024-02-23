@@ -1,0 +1,46 @@
+.posts-list article {
+  background-color: var(--gray);
+  margin: var(--gr-em) 0;
+  padding: var(--gr-em);
+  border-radius: var(--gr-em);
+}
+
+.posts-list article a {
+  display: flex;
+  gap: var(--gr-em);
+}
+
+.posts-list article p {
+  margin-block-end: 0;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+}
+
+.posts-list article picture {
+  --size: calc(var(--gr-em) * 4);
+  border-radius: calc(var(--gr-em) / 2);
+  width: var(--size);
+  height: var(--size);
+  aspect-ratio: 1 / 1;
+  flex-shrink: 0;
+  overflow: hidden;
+}
+
+.posts-list article img {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+
+.posts-list .post-list--title {
+  font-weight: bold;
+  text-decoration: none;
+  color: inherit;
+}
+
+.posts-list article:hover .post-list--title {
+  text-decoration: underline;
+}

@@ -156,28 +156,6 @@ a {
   color: inherit;
 }
 
-.feed-grid article {
-  background-color: var(--gray);
-  margin: var(--gr-em);
-  padding: var(--gr-em);
-  border-radius: 8px;
-}
-
-.feed-grid article header {
-  display: flex;
-  justify-content: space-between;
-}
-
-.feed-grid .post-list--title {
-  font-weight: bold;
-  text-decoration: none;
-  color: inherit;
-}
-
-.feed-grid article:hover .post-list--title {
-  text-decoration: underline;
-}
-
 .windy-webcam-timelapse-player-iframe {
   max-width: 500px;
   margin: 0 auto;

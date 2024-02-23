@@ -1,6 +1,12 @@
+<link rel="stylesheet" href="{{ '/css/posts-list.css' |> url }}">
 {{ for post of postslist |> reverse }}
   <article>
     <a href="{{ post.url |> url }}">
+      {{ if post.content }}
+        {{ post.content |> findImgTag(128) }}
+      {{ /if }}
+
+      <div>
       <header>
           {{ if post.title }}
             <strong class="post-list--title">{{ post.title }}</strong>
@@ -15,9 +21,10 @@
 
       {{ if post.content }}
         <p>
-          {{ post.content |> truncate(150) |> md }}
+          {{ post.content |> md |> findTextContent |> truncate(400) }}
         </p>
       {{ /if }}
+      </div>
     </a>
 
     {{ for tag of post.tags }}

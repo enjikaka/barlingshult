@@ -11,6 +11,7 @@ import picture from "lume/plugins/picture.ts";
 import transformImages from "lume/plugins/transform_images.ts";
 
 import { DOMParser } from 'lume/deps/dom.ts';
+import { Page } from "lume/core/file.ts";
 
 const site = lume({
   location: new URL('https://barlingshult.se/')
@@ -46,35 +47,93 @@ site.copy('/fonts');
 
 site.filter(
   'head',
-  (array = [], n) => (n < 0) ? array.slice(n) : array.slice(0, n),
+  (array, n) => (n < 0) ? array.slice(n) : array.slice(0, n),
 );
 
 site.filter("truncate", (value, length) => `${value.substring(0, length)}…`);
 
 site.filter('latinPlantLogo', text => `/img/logo/${text.toLocaleLowerCase().split(' ').join('-')}.png`);
 
-site.filter('findImgTag', text => {
+site.filter('firstPicture', text => {
   const parser = new DOMParser();
   const document = parser.parseFromString(text, 'text/html');
-  const img = document.querySelector('img');
 
-  return img ? img.outerHTML : '';
+  console.log(text);
+
+  if (document) {
+    const pictureElement = document.querySelector('picture');
+
+    if (pictureElement) {
+      return pictureElement.outerHTML;
+    }
+  }
+
+  return '';
+});
+
+function addImgSizes (page: Page) {
+  if (page.document) {
+    const img = page.document.querySelector('img');
+
+    if (img) {
+      const width = img.getAttribute('width');
+      const srcset = img.getAttribute('srcset');
+
+      if (srcset && width && !img.hasAttribute('sizes')) {
+        img.setAttribute('sizes', `${width}px`);
+      }
+    }
+  }
+}
+
+site.process([".html"], async (pages) => {
+  await Promise.all(pages.map(addImgSizes));
+});
+
+site.filter('findImgTag', (text, size) => {
+  const parser = new DOMParser();
+  const document = parser.parseFromString(text, 'text/html');
+
+  if (document) {
+    const img = document.querySelector('img');
+
+    if (img) {
+      img.setAttribute('width', size);
+
+      const transformImages = img.getAttribute('transform-images');
+      const width = img.getAttribute('width');
+
+      if (transformImages && width) {
+        img.setAttribute('transform-images', transformImages.replace(`${parseInt(width, 10)}`, size));
+      }
+
+      return img.outerHTML;
+    }
+  }
+
+  return '';
 });
 
 site.filter('findImgSrc', text => {
   const parser = new DOMParser();
   const document = parser.parseFromString(text, 'text/html');
-  const img = document.querySelector('img');
 
-  return img ? img.getAttribute('src').replace('.jpg', '_60w.webp') : '';
+  if (document) {
+    const img = document.querySelector('img');
+
+    if (img) {
+      return img.getAttribute('src')?.replace('.jpg', '_60w.webp') ?? '';
+    }
+  }
+
+  return '';
 });
 
 site.filter('findTextContent', text => {
   const parser = new DOMParser();
   const document = parser.parseFromString(text, 'text/html');
-  const p = document.querySelector('p');
 
-  return p ? p.textContent : '';
+  return document?.textContent ?? '';
 });
 
 site.filter('baseHref', () => site.options.location.toString());
