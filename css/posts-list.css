@@ -19,6 +19,15 @@
   -webkit-box-orient: vertical;
 }
 
+.posts-list article header {
+  display: flex;
+  justify-content: space-between;
+}
+
+.posts-list article time {
+  font-size: .8em;
+}
+
 .posts-list article picture {
   --size: calc(var(--gr-em) * 4);
   border-radius: calc(var(--gr-em) / 2);
