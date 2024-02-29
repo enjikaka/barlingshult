@@ -7,7 +7,11 @@ url: /produkter/
 <section>
   <h1>Produkter</h1>
   <nav class="posts-list">
-    {{ set productslist = search.pages("type=products") }}
+    {{ set productslist = search.pages("type=products in_stock=true", "name") }}
+    {{ include "templates/products-list.vto" }}
+    {{ set productslist = search.pages("type=products in_stock=soon", "name") }}
+    {{ include "templates/products-list.vto" }}
+    {{ set productslist = search.pages("type=products in_stock=false", "name") }}
     {{ include "templates/products-list.vto" }}
   </nav>
 </section>

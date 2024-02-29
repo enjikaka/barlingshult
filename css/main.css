@@ -185,6 +185,10 @@ nav a:hover {
   text-decoration: underline;
 }
 
+.soon-in-stock {
+  opacity: 0.8;
+}
+
 .dead,
 .out-of-stock {
   filter: grayscale(100%);

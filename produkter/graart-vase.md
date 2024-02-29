@@ -4,7 +4,7 @@ sort: Väse
 ngb: 17868
 latin: Pisum sativum
 price: 49
-in_stock: false
+in_stock: true
 amount: 10 frön
 preSowingTime: 04
 directSowingTime: 05

@@ -3,7 +3,7 @@ name: Honung
 sort: Barlingshult
 price: 60
 amount: 250 gram
-in_stock: true
+in_stock: false
 tags:
   - honung
   - nordiska bin
