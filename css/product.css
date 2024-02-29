@@ -15,6 +15,15 @@
   align-items: flex-start;
 }
 
+.product picture {
+  max-width: 300px;
+}
+
 .product header {
   background-color: var(--blue);
+}
+
+.product figure {
+  width: 128px;
+  height: 128px;
 }

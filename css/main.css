@@ -77,7 +77,7 @@ body {
   font-family: 'Averia Serif Libre', sans-serif;
 }
 
-.gradient-box {
+section {
   margin-block-start: var(--gr-rem);
 }
 
@@ -98,9 +98,10 @@ body {
 
 .site-navigation {
   display: flex;
-  flex-flow: row nowrap;
+  flex-flow: row wrap;
   gap: 0.5em;
-  margin-bottom: var(--gr-rem);
+  margin: 0 var(--gr-rem) var(--gr-rem);
+  justify-content: center;
 }
 
 .site-navigation a {
@@ -139,12 +140,6 @@ body {
 main {
   width: 100%;
   box-sizing: border-box;
-}
-
-.feeds {
-  gap: var(--gr-rem);
-  display: flex;
-  flex-flow: column nowrap;
 }
 
 .feed-columns article {
@@ -207,4 +202,15 @@ nav a:hover {
 
 .plant-archive article > img {
   display: none;
+}
+
+@media (max-width: 666px) {
+  .site-footer {
+    flex-direction: column;
+  }
+
+  .site-footer address:last-child {
+    text-align: initial;
+    margin-top: calc(var(--gr-em) / 2);
+  }
 }

@@ -36,12 +36,13 @@ q::before {
 
 picture {
   display: block;
-  width: 90%;
+  width: 100%;
   max-width: 600px;
-  margin: 2rem auto;
+  margin: var(--gr-em) auto;
   user-select: none;
   pointer-events: none;
-  border: calc(var(--gr-rem) / 8) solid currentcolor;
+  border-radius: calc(var(--gr-em) / 2);
+  overflow: hidden;
 }
 
 img {
@@ -49,12 +50,7 @@ img {
   width: 100%;
 }
 
-.product picture {
-  width: 300px;
-}
-
 .post header,
 .post footer {
   padding: calc(var(--gr-em) / 2) var(--gr-em);
-  line-height: calc(var(--gr-em) / 2);
 }

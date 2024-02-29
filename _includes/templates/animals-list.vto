@@ -1,0 +1,7 @@
+{{ for plant of plantslist }}
+  {{ if !plant.disabled }}
+    <article class="product-row animal-row">
+      {{ plant.content |> safe }}
+    </article>
+  {{ /if }}
+{{ /for }}

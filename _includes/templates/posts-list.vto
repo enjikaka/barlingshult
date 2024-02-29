@@ -7,17 +7,14 @@
       {{ /if }}
 
       <div>
-      <header>
-          {{ if post.title }}
-            <strong class="post-list--title">{{ post.title }}</strong>
-          {{ else }}
-            <code>{{ post.url }}</code>
-          {{ /if }}
-
-          <time class="post-list--date" datetime="{{ post.date |> date('DATETIME') }}">
-            {{ post.date |> toISODate }}
-          </time>
-      </header>
+      {{ if post.title }}
+        <strong class="post-list--title">{{ post.title }}</strong>
+      {{ else }}
+        <code>{{ post.url }}</code>
+      {{ /if }}
+      <time datetime="{{ post.date |> date('DATETIME') }}">
+        {{ post.date |> toISODate }}
+      </time>
 
       {{ if post.content }}
         <p>

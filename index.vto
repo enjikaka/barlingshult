@@ -2,40 +2,38 @@
 title: Start
 layout: layouts/main.vto
 ---
-<div class="feeds">
-  <section class="gradient-box">
-    <h1>Blogg</h1>
-    <div class="posts-list">
-      {{ set postslist = search.pages("type=posts") |> head(-4) }}
-      {{ include "templates/posts-list.vto" }}
-    </div>
-    <a href="/blogg/" class="archive-link">Visa fler...</a>
-  </section>
-  <section class="gradient-box yellow">
-    <h1>Historier</h1>
-    <div class="posts-list">
-      {{ set postslist = search.pages("type=historic-sources") |> head(-4) }}
-      {{ include "templates/posts-list.vto" }}
-    </div>
-  </section>
-  <section class="gradient-box">
-    <h1>Odling</h1>
-    <div class="feed-columns">
-      {{ set plantslist = search.pages("type=plants") |> head(-4) }}
-      {{ include "templates/plants-list.vto" }}
-    </div>
-    <a href="/växter/" class="archive-link">Visa fler...</a>
-  </section>
-   <section class="gradient-box brown">
-    <h1>Produkter</h1>
-    <nav class="posts-list">
-      {{ set productslist = search.pages("type=products") |> head(-4) }}
-      {{ include "templates/products-list.vto" }}
-    </nav>
-    <a href="/produkter/" class="archive-link">Visa fler...</a>
-  </section>
-  <section class="gradient-box webcam">
-    <h1>Webbkamera</h1>
-    <a name="windy-webcam-timelapse-player" data-id="1603222616" data-play="month" href="https://windy.com/webcams/1603222616" target="_blank">Arjang › East: Barlingshult</a><script async type="text/javascript" src="https://webcams.windy.com/webcams/public/embed/script/player.js"></script>
-  </section>
-</div>
+<section>
+  <h1>Blogg</h1>
+  <div class="posts-list">
+    {{ set postslist = search.pages("type=posts") |> head(-4) }}
+    {{ include "templates/posts-list.vto" }}
+  </div>
+  <a href="/blogg/" class="archive-link">Visa fler...</a>
+</section>
+<section>
+  <h1>Historier</h1>
+  <div class="posts-list">
+    {{ set postslist = search.pages("type=historic-sources") |> head(-4) }}
+    {{ include "templates/posts-list.vto" }}
+  </div>
+</section>
+<section >
+  <h1>Odling</h1>
+  <div class="feed-columns">
+    {{ set plantslist = search.pages("type=plants") |> head(-4) }}
+    {{ include "templates/plants-list.vto" }}
+  </div>
+  <a href="/odling/" class="archive-link">Visa fler...</a>
+</section>
+  <section>
+  <h1>Produkter</h1>
+  <nav class="posts-list">
+    {{ set productslist = search.pages("type=products") |> head(-4) }}
+    {{ include "templates/products-list.vto" }}
+  </nav>
+  <a href="/produkter/" class="archive-link">Visa fler...</a>
+</section>
+<section>
+  <h1>Webbkamera</h1>
+  <a name="windy-webcam-timelapse-player" data-id="1603222616" data-play="month" href="https://windy.com/webcams/1603222616" target="_blank">Arjang › East: Barlingshult</a><script async type="text/javascript" src="https://webcams.windy.com/webcams/public/embed/script/player.js"></script>
+</section>

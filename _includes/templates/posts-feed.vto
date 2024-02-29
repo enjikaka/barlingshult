@@ -1,4 +1,4 @@
-<section class="gradient-box">
+<section>
   {{ set posts = postslist |> reverse |> head(3) }}
   {{ for _post in postslist |> reverse }}
     {{ set post = _post.data }}

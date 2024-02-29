@@ -3,12 +3,10 @@ title: Blogg
 layout: layouts/main.vto
 url: /blogg/
 ---
-<div class="feeds">
-  <section class="gradient-box">
-    <h1>Blogg</h1>
-    <div class="posts-list">
-      {{ set postslist = search.pages("type=posts") }}
-      {{ include "templates/posts-list.vto" }}
-    </div>
-  </section>
-</div>
+<section>
+  <h1>Blogg</h1>
+  <div class="posts-list">
+    {{ set postslist = search.pages("type=posts") }}
+    {{ include "templates/posts-list.vto" }}
+  </div>
+</section>

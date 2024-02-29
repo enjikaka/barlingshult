@@ -42,7 +42,7 @@ site.use(slugifyUrls());
 site.use(picture());
 site.use(transformImages());
 
-site.copy('/img/bgs');
+site.copy('/img/svg');
 site.copy('/fonts');
 
 site.filter(
