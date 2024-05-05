@@ -1,62 +1,56 @@
 .posts-list article {
-  --margins: var(--gr-em);
-  background-color: var(--gray);
-  margin: var(--margins) 0;
-  padding: var(--margins);
-  border-radius: var(--margins);
-  overflow: hidden;
+    --margins: var(--gr-em);
+    background-color: var(--gray);
+    margin: var(--margins) 0;
+    padding: var(--margins);
+    border-radius: var(--margins);
+    overflow: hidden;
 }
 
 .posts-list article a {
-  display: flex;
-  gap: var(--gr-em);
+    display: flex;
+    gap: var(--gr-em);
 }
 
 .posts-list article time {
-  display: block;
-  font-size: .8em;
+    display: block;
+    font-size: 0.8em;
 }
 
 .posts-list article p {
-  margin-block-start: calc(var(--gr-em) / 4);
-  margin-block-end: 0;
-  text-overflow: ellipsis;
-  overflow: hidden;
-  display: -webkit-box;
-  -webkit-line-clamp: 3;
-  -webkit-box-orient: vertical;
+    margin-block-start: calc(var(--gr-em) / 4);
+    margin-block-end: 0;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
 }
 
 .posts-list article picture {
-  --size: calc(var(--gr-em) * 4);
-  border-radius: calc(var(--gr-em) / 2);
-  width: var(--size);
-  height: var(--size);
-  aspect-ratio: 1 / 1;
-  flex-shrink: 0;
-  overflow: hidden;
+    --size: calc(var(--gr-em) * 4);
+    border-radius: calc(var(--gr-em) / 2);
+    width: var(--size);
+    height: var(--size);
+    aspect-ratio: 1 / 1;
+    flex-shrink: 0;
+    overflow: hidden;
 }
 
 .posts-list article img {
-  object-fit: cover;
-  width: 100%;
-  height: 100%;
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
 }
 
 @media (max-width: 666px) {
-  .posts-list article {
-    --margins: calc(var(--gr-em) / 1.2);
-  }
+    .posts-list article {
+        --margins: calc(var(--gr-em) / 1.2);
+    }
 
-  .posts-list article a {
-    flex-direction: column;
-    align-items: center;
-    gap: calc(var(--gr-em) / 2);
-  }
-
-  .posts-list article picture {
-    width: 100%;
-    height: auto;
-    aspect-ratio: 4 / 3;
-  }
+    .posts-list article picture {
+        width: 100%;
+        height: auto;
+        aspect-ratio: 4 / 3;
+    }
 }

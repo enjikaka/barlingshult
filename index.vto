@@ -4,10 +4,10 @@ layout: layouts/main.vto
 ---
 <section>
   <h1>Blogg</h1>
-  <div class="posts-list">
+  <nav class="posts-list">
     {{ set postslist = search.pages("type=posts") |> head(-4) }}
     {{ include "templates/posts-list.vto" }}
-  </div>
+  </nav>
   <a href="/blogg/" class="archive-link">Visa fler...</a>
 </section>
 <section>

@@ -1,21 +1,12 @@
-.post {
-  background-color: var(--gray);
-  border-radius: 16px;
-  overflow: hidden;
-}
-
-.post-title {
-  font-size: 1.5rem;
-  font-weight: 700;
-  font-family: "Rubik", sans-serif;
+.post h1 {
+  text-align: center;
+  font-size: 1.4em;
+  margin-top: 1.4rem;
 }
 
 .post-body {
-  padding: var(--gr-em);
-}
-
-.post header {
-  background-color: var(--yellow);
+  max-width: 100ex;
+  margin: 0 auto;
 }
 
 date-header {
@@ -36,21 +27,21 @@ q::before {
 
 picture {
   display: block;
-  width: 100%;
+  width: 90%;
   max-width: 600px;
-  margin: var(--gr-em) auto;
+  margin: 2rem auto;
   user-select: none;
   pointer-events: none;
-  border-radius: calc(var(--gr-em) / 2);
-  overflow: hidden;
+  box-shadow: 0 2px 4px black;
+  border: 10px solid white;
 }
 
 img {
-  display: block;
   width: 100%;
 }
 
 .post header,
 .post footer {
-  padding: calc(var(--gr-em) / 2) var(--gr-em);
+  text-align: center;
+  padding: 1rem 0;
 }

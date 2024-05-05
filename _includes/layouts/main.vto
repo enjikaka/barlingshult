@@ -10,6 +10,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Averia+Serif+Libre&family=Hedvig+Letters+Serif:opsz@12..24&family=Rubik:wght@400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="{{ '/css/main.css' |> url }}">
+    <link rel="stylesheet" href="{{ '/css/posts-list.css' |> url }}">
     <link rel="stylesheet" href="{{ '/css/product-row.css' |> url }}">
     <link rel="alternate" href="/feed.xml" type="application/atom+xml" title="{{ site.title }}">
     <link rel="alternate" href="/feed.json" type="application/json" title="{{ site.title }}">
@@ -19,13 +20,6 @@
       <strong>Barlingshult Småbruk</strong>
     </header>
     <div class="wrapper">
-      <nav class="site-navigation">
-        <a href="/">Start</a>
-        <a href="/blogg/">Blogg</a>
-        <a href="/odling/">Odling</a>
-        <a href="/djur/">Djur</a>
-        <a href="/produkter/">Produkter</a>
-      </nav>
       {{ if url == "/" }}
         <aside>
           <p>

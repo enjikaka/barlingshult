@@ -1,32 +1,14 @@
 <link rel="stylesheet" href="{{ '/css/posts-list.css' |> url }}">
+<ul>
 {{ for post of postslist |> reverse }}
-  <article>
-    <a href="{{ post.url |> url }}">
-      {{ if post.content }}
-        {{ post.content |> findImgTag(128) }}
-      {{ /if }}
-
-      <div>
-      {{ if post.title }}
-        <strong class="post-list--title">{{ post.title }}</strong>
-      {{ else }}
-        <code>{{ post.url }}</code>
-      {{ /if }}
-      <time datetime="{{ post.date |> date('DATETIME') }}">
-        {{ post.date |> toISODate }}
-      </time>
-
-      {{ if post.content }}
-        <p>
-          {{ post.content |> md |> findTextContent |> truncate(400) }}
-        </p>
-      {{ /if }}
-      </div>
-    </a>
-
-    {{ for tag of post.tags }}
-      {{ set tagUrl }}/tags/{{ tag }}/{{ /set }}
-      <a href="{{ tagUrl |> url }}" class="tag">{{ tag }}</a>
-    {{ /for }}
-</article>
+    <li>
+        <a href="{{ post.url |> url }}">
+            {{ if post.title }}
+                <strong class="post-list--title">{{ post.title }}</strong>
+            {{ else }}
+                <code>{{ post.url }}</code>
+            {{ /if }}
+        </a>
+    </li>
 {{ /for }}
+</ul>
