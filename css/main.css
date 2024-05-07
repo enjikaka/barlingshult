@@ -18,15 +18,19 @@ body {
     scroll-behavior: smooth;
 }
 
+address,
+aside,
+main,
 .site-footer,
 .site-header {
-    padding: 1em var(--gr-rem);
-    position: relative;
-    overflow: hidden;
+    margin-block-start: var(--gr-rem);
+    margin-block-end: var(--gr-rem);
+    padding: 0 var(--gr-rem);
+    box-sizing: border-box;
 }
 
-.site-header {
-    border-bottom: 1px dashed rgba(0, 0, 0, 0.5);
+address {
+    padding-left: 0;
 }
 
 .site-header strong {
@@ -42,19 +46,6 @@ body {
 
 .site-footer {
     border-top: 1px solid black;
-}
-
-.archive-link {
-    display: block;
-    text-align: center;
-    color: currentColor;
-    margin: 1em 0;
-}
-
-main {
-    padding: var(--gr-rem);
-    width: 100%;
-    box-sizing: border-box;
 }
 
 .feeds section + section {
@@ -75,6 +66,12 @@ main {
 
 .feed-columns article {
     break-inside: avoid;
+    margin-block-start: var(--gr-rem);
+    margin-block-end: var(--gr-rem);
+
+    &:first-child {
+        margin-block-start: 0;
+    }
 }
 
 .feed-grid {
