@@ -1,10 +1,11 @@
-FROM denoland/deno:1.43.1
-
-# The port that your application listens to.
-EXPOSE 3000
+FROM denoland/deno:alpine-2.0.0 AS builder
 
 WORKDIR /app
 
 # These steps will be re-run upon each file change in your working directory:
 ADD . .
 RUN deno task build
+
+FROM karlsson/deno-file-server
+EXPOSE 5000
+COPY --from=builder /app/_site /usr/app/src
