@@ -4,6 +4,7 @@ WORKDIR /app
 
 # These steps will be re-run upon each file change in your working directory:
 ADD . .
+run deno install --allow-scripts=npm:sharp@0.33.5
 RUN deno task build
 
 FROM karlsson/deno-file-server
