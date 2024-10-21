@@ -1,10 +1,9 @@
-FROM denoland/deno:alpine-2.0.0 AS builder
+FROM denoland/deno:debian-2.0.0 AS builder
 
 WORKDIR /app
 
 # These steps will be re-run upon each file change in your working directory:
 ADD . .
-run deno install --allow-scripts=npm:sharp@0.33.5
 RUN deno task build
 
 FROM karlsson/deno-file-server
