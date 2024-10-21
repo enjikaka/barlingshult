@@ -7,5 +7,5 @@ ADD . .
 RUN deno task build
 
 FROM karlsson/deno-file-server
-EXPOSE 5000
+EXPOSE 8000
 COPY --from=builder /app/_site /usr/app/src
