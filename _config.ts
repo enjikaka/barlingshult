@@ -54,6 +54,36 @@ site.filter("truncate", (value, length) => `${value.substring(0, length)}…`);
 
 site.filter('latinPlantLogo', text => `/img/logo/${text.toLocaleLowerCase().split(' ').join('-')}.png`);
 
+site.filter("groupByFamily", value => {
+  const families: Record<string, any[]>  = {};
+
+  for (const plant of value) {
+    const family = plant.latin.split(' ')[0];
+    families[family] = [...(families[family] || []), plant];
+  }
+
+  return families;
+});
+
+site.filter("getFamilies", value => {
+  const families: Record<string, any[]>  = {};
+
+  for (const plant of value) {
+    if (!plant.disabled && !plant.dead) {
+      const family = plant.latin.split(' ')[0];
+      families[family] = [...(families[family] || []), plant];
+    }
+  }
+
+  return Object.entries(families)
+    .map(([family, plants]) => ({
+      name: family,
+      slug: family.toLocaleLowerCase().split(' ').join('-'),
+      count: plants.length
+    }))
+    .sort((a, b) => a.name.localeCompare(b.name));
+});
+
 site.filter('firstPicture', text => {
   const parser = new DOMParser();
   const document = parser.parseFromString(text, 'text/html');

@@ -14,9 +14,7 @@ url: /odling/
 <link rel="stylesheet" href="{{ '/css/product-row.css' |> url }}">
 <div class="plant-archive">
   <section>
-    <div class="feed-columns">
-      {{ set plantslist = search.pages("type=plants", "order latin") }}
-      {{ include "templates/plants-list.vto" }}
-    </div>
+    {{ set plantslist = search.pages("type=plants", "order latin") }}
+    {{ include "templates/plants-family-list.vto" }}
   </section>
 </div>

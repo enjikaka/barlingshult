@@ -2,6 +2,7 @@
 sort: Frost
 name: Persika
 latin: Prunus persica
+dead: true
 tags:
   - frukt
 ---

@@ -1,0 +1,26 @@
+{{ set families = plantslist |> getFamilies }}
+
+<ol>
+{{ for family of families }}
+    <li><a href="#{{family.slug}}">{{ family.name }} ({{ family.count }})</a></li>
+{{ /for }}
+</ol>
+<div class="feed-columns">
+{{ for family of families }}
+    <h2 id="{{family.slug}}">{{ family.name }} ({{ family.count }} sorter)</h2>
+    {{ for plant of plantslist }}
+        {{ if !plant.disabled && plant.latin.split(" ")[0] == family.name }}
+            <article class="product-row {{ if plant.dead }} dead{{ /if }}">
+            <header class="product-header">
+                <div class="info">
+                <h3>{{ plant.name }} {{ if plant.sort }}'{{ plant.sort }}'{{ /if }}</h3>
+                <em>{{ plant.latin }}</em>
+                </div>
+            </header>
+            {{ if plant.dead }}<p><strong><small>DÖTT</small></strong></p>{{ /if }}
+            {{ plant.content |> safe }}
+            </article>
+        {{ /if }}
+    {{ /for }}
+{{ /for }}
+</div>
