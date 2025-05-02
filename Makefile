@@ -14,11 +14,11 @@ sync_images:
 deploy_pi: build
   rsync -a _site/ 192.168.0.89:/var/www/barlingshult
 
-deploy: build
-	rsync -a _site/ $(DEST):/home/static/barlingshult.se/
+deploy:
+	rsync -a _site/ $(DEST):/home/enjikaka/static/barlingshult.se/
 
 sync_images:
-	rsync -a $(DEST):/home/static/barlingshult.se/img _cache/
+	rsync -a $(DEST):/home/enjikaka/static/barlingshult.se/img _cache/
 
 sync_posts:
-	rsync -a $(DEST):/home/static/barlingshult.se/blogg .
+	rsync -a $(DEST):/home/enjikaka/static/barlingshult.se/blogg .
