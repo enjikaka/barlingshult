@@ -1,7 +1,8 @@
 ---
 sort: Goji Golden Honey
-name: Bocktörna
+name: Bocktörne
 latin: Lycium barbarum
+dead: true
 tags:
   - bär
 ---
