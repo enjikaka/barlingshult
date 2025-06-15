@@ -1,15 +1,10 @@
-FROM denoland/deno:debian-2.3.6 AS deps
-WORKDIR /app
-COPY deno.json ./
-RUN deno cache jsr:@std/http/file-server
-
 FROM denoland/deno:debian-2.3.6 AS builder
 WORKDIR /app
-COPY --from=deps /deno-dir /deno-dir
-ENV DENO_DIR=/deno-dir
+COPY deno.json deno.lock ./
+RUN deno install --frozen
+RUN deno cache --allow-scripts _config.ts
 RUN deno install --global --allow-net --allow-read -r -n file-server jsr:@std/http/file-server
 
-# These steps will be re-run upon each file change in your working directory:
 ADD . .
 RUN deno task build
 
