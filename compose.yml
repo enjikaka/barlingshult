@@ -2,7 +2,6 @@ services:
   serve:
     build: .
     ports:
-      - "3000:3000"
+      - "8000:8000"
     volumes:
       - ".:/app"
-    command: deno task serve
