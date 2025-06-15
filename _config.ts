@@ -32,15 +32,19 @@ site.use(feed({
   },
 }));
 
+site.use(terser());
+site.add([".js"]);
 
 site.use(postcss());
-site.use(terser());
+site.add([".css"]);
+
 site.use(date());
 
 site.use(slugifyUrls());
 
 site.use(picture());
 site.use(transformImages());
+site.add("/img");
 
 site.copy('/img/svg');
 site.copy('/fonts');
