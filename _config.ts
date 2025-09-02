@@ -48,6 +48,7 @@ site.add("/img");
 
 site.copy('/img/svg');
 site.copy('/fonts');
+site.copy('/.well-known');
 
 site.filter(
   'head',
