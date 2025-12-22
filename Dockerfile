@@ -1,4 +1,4 @@
-FROM denoland/deno:debian-2.4.5 AS builder
+FROM denoland/deno:debian-2.6.3 AS builder
 WORKDIR /app
 COPY deno.json deno.lock ./
 RUN deno install --frozen
@@ -9,7 +9,7 @@ ADD . .
 RUN deno task build
 
 # 3. Slutgiltig minimal runtime
-FROM denoland/deno:debian-2.4.5 AS runtime
+FROM denoland/deno:debian-2.6.3 AS runtime
 EXPOSE 8000
 COPY --from=builder /usr/local/bin/file-server /usr/local/bin/file-server
 COPY --from=builder /app/_site /usr/app/src
