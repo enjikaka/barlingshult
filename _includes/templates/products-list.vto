@@ -3,7 +3,7 @@
     <a href="{{ product.url |> url }}" class="product-header">
       {{ product.content |> findImgTag |> safe }}
       <div class="info">
-        <span>{{ product.name }} {{ if product.sort }}'{{ product.sort }}'{{ /if }}</span>
+        <span>{{ product.name }} {{ if product.sort }} '{{ product.sort }}'{{ /if }}</span>
         {{ if !product.in_stock }}<small>Inte i lager</small>{{ /if }}
         {{ if product.in_stock == "soon" }}<small>...snart i lager!</small>{{ /if }}
       </div>

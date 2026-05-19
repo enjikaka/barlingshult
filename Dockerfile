@@ -1,17 +1,19 @@
-FROM denoland/deno:debian-2.6.3 AS builder
+FROM denoland/deno:debian-2.7.14 AS builder
+
 WORKDIR /app
+
 COPY deno.json deno.lock ./
 RUN deno install --frozen
-RUN deno cache --allow-scripts _config.ts
-RUN deno install --global --allow-net --allow-read -r -n file-server jsr:@std/http/file-server
 
-ADD . .
+COPY . .
 RUN deno task build
 
-# 3. Slutgiltig minimal runtime
-FROM denoland/deno:debian-2.6.3 AS runtime
+FROM denoland/deno:alpine-2.7.14 AS runtime
+
+WORKDIR /usr/app
+
+RUN deno install --allow-net --allow-read --allow-sys --global jsr:@std/http/file-server
+COPY --from=builder /app/_site ./_site
+
 EXPOSE 8000
-COPY --from=builder /usr/local/bin/file-server /usr/local/bin/file-server
-COPY --from=builder /app/_site /usr/app/src
-WORKDIR /usr/app/src
-CMD ["file-server", ".", "--port", "8000"]
+CMD ["file-server", "./_site", "--port", "8000"]
