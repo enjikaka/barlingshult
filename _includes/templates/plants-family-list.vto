@@ -7,7 +7,7 @@
 </ol>
 <div class="feed-columns">
 {{ for family of families }}
-    <h2 id="{{family.slug}}">{{ family.name }} ({{ family.count }} sorter)</h2>
+    <h2 id="{{family.slug}}">{{ family.swedishName }} — {{ family.name }} ({{ family.count }} sorter)</h2>
     {{ for plant of plantslist }}
         {{ if !plant.disabled && plant.latin.split(" ")[0] == family.name }}
             <article class="product-row {{ if plant.dead }} dead{{ /if }}">

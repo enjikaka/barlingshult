@@ -70,6 +70,27 @@ site.filter("groupByFamily", value => {
   return families;
 });
 
+const familyToSwedish: Record<string, string> = {
+  'Actinidia': 'Aktinidiasläktet',
+  'Amelanchier': 'Häggmispelsläktet',
+  'Aronia': 'Aroniasläktet',
+  'Caragana': 'Karagansläktet',
+  'Chaenomeles': 'Rosenkvittensläktet',
+  'Cornus': 'Kornellsläktet',
+  'Corylus': 'Hasselsläktet',
+  'Fragaria': 'Smultronsläktet',
+  'Hippophae': 'Havtornssläktet',
+  'Lonicera': 'Tryar',
+  'Malus': 'Aplar',
+  'Morus': 'Mullbärssläktet',
+  'Prunus': 'Plommonsläktet',
+  'Pyrus': 'Päronsläktet',
+  'Ribes': 'Ripsar',
+  'Rubus': 'Rubusar',
+  'Vaccinium': 'Blåbärssläktet',
+  'Vitis': 'Vinsläktet'
+};
+
 site.filter("getFamilies", value => {
   const families: Record<string, any[]>  = {};
 
@@ -84,7 +105,8 @@ site.filter("getFamilies", value => {
     .map(([family, plants]) => ({
       name: family,
       slug: family.toLocaleLowerCase().split(' ').join('-'),
-      count: plants.length
+      count: plants.length,
+      swedishName: familyToSwedish[family] ?? '',
     }))
     .sort((a, b) => a.name.localeCompare(b.name));
 });
