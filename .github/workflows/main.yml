@@ -1,44 +1,23 @@
-name: build
+name: "deploy"
 
 on:
   push:
-    branches: [main]
-  pull_request:
-    branches: [main]
+    branches:
+      - main
 
 jobs:
-  build:
-    runs-on: ${{ matrix.os }}
-    strategy:
-      matrix:
-        os: [ubuntu-latest]
-        deno:
-          [1.41.0]
+  deploy:
+    runs-on: ubuntu-latest
+    environment: production
     steps:
-      - name: Checkout repo
-        uses: actions/checkout@v2
-      - name: Cache images
-        id: image-cache
-        uses: actions/cache@v2
+      - name: Cloning repo
+        uses: actions/checkout@v6
         with:
-          path: |
-            _cache
-          key: ${{ runner.os }}-img
-      - name: Setup Deno
-        uses: denoland/setup-deno@main
+          fetch-depth: 0
+
+      - name: Push to dokku
+        uses: dokku/github-action@master
         with:
-          deno-version: ${{ matrix.deno }}
-      - run: deno task build
-      - name: Deploy to Netlify
-        uses: nwtgck/actions-netlify@v1.2
-        with:
-          publish-dir: './_site'
-          production-branch: main
-          github-token: ${{ secrets.GITHUB_TOKEN }}
-          deploy-message: "Deploy from GitHub Actions"
-          enable-pull-request-comment: false
-          enable-commit-comment: true
-          overwrites-pull-request-comment: true
-        env:
-          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
-          NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
+          branch: main
+          git_remote_url: ${{ secrets.GIT_REMOTE_URL }}
+          ssh_private_key: ${{ secrets.SSH_PRIVATE_KEY }}
