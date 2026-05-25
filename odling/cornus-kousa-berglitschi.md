@@ -1,7 +1,7 @@
 ---
 sort: Bergslitschi
 name: Koreansk blomsterkornell
-latin: Ribes nigrum
+latin: Cornus kousa
 tags:
   - bär
 ---
