@@ -20,9 +20,12 @@ bodyClass: body-post
       {{ content |> safe }}
 
       {{ if tags.includes("chili") }}
-        <p>
-          Plantan är ca 10-15 cm vid leverans. Bör planeras om i större kruka så fort som möjligt. Kan leva resten av sitt liv i kruka över 5 L inomhus i ljust fönster eller planteras utomhus när tempteraturen om natten inte understiger 10 grader. Bevaras den i kruka så är det viktigt att tänka på att chiliplantan är flerårig. Släng den alltså inte efter skörd utan låt den övervintra ljust inomhus.
-        </p>
+      <p>
+        Plantan är ca 10-15 cm vid leverans. Bör planeras om i större kruka så fort som möjligt. Kan leva resten av sitt
+        liv i kruka över 5 L inomhus i ljust fönster eller planteras utomhus när tempteraturen om natten inte
+        understiger 10 grader. Bevaras den i kruka så är det viktigt att tänka på att chiliplantan är flerårig. Släng
+        den alltså inte efter skörd utan låt den övervintra ljust inomhus.
+      </p>
       {{ /if }}
 
       <dl>
@@ -34,11 +37,17 @@ bodyClass: body-post
         <dd>{{ amount }}</dd>
         {{ if tags.includes("amatörsort") }}
         <dt>Bevarandestatus</dt>
-        <dd><dfn title="Sort som inte är vanlig kommersiellt och har utvecklats för att odlas i ett särskilt klimat eller i speciella jordar."><a href="https://jordbruksverket.se/vaxter/odling/utsade-och-registrering-av-vaxtsorter/registrering-av-nya-sorter-och-vaxtforadlarratter#h-Amatorsorter" target="_blank">Amatörsort</a></dfn></dd>
+        <dd><dfn
+            title="Sort som inte är vanlig kommersiellt och har utvecklats för att odlas i ett särskilt klimat eller i speciella jordar."><a
+              href="https://jordbruksverket.se/vaxter/odling/utsade-och-registrering-av-vaxtsorter/registrering-av-nya-sorter-och-vaxtforadlarratter#h-Amatorsorter"
+              target="_blank">Amatörsort</a></dfn></dd>
         {{ /if }}
         {{ if tags.includes("bevarandesort") }}
         <dt>Bevarandestatus</dt>
-        <dd><dfn title="En bevarandesort är en lantsort eller en annan sort som har odlats före 1950 i Sverige. Våra gamla sorter är ett kulturarv som det finns många skäl till att bevara."><a href="https://jordbruksverket.se/vaxter/odling/utsade-och-registrering-av-vaxtsorter/registrering-av-nya-sorter-och-vaxtforadlarratter#h-Bevarandesorter" target="_blank">Bevarandesort</a></dfn></dd>
+        <dd><dfn
+            title="En bevarandesort är en lantsort eller en annan sort som har odlats före 1950 i Sverige. Våra gamla sorter är ett kulturarv som det finns många skäl till att bevara."><a
+              href="https://jordbruksverket.se/vaxter/odling/utsade-och-registrering-av-vaxtsorter/registrering-av-nya-sorter-och-vaxtforadlarratter#h-Bevarandesorter"
+              target="_blank">Bevarandesort</a></dfn></dd>
         {{ /if }}
         {{ if it.latin }}
         <dt>Botaniskt namn</dt>
@@ -57,22 +66,27 @@ bodyClass: body-post
         <dd><local-month-name value="{{directSowingTime}}"></local-month-name></dd>
         {{ /if }}
         {{ if tags.includes("grönt kulturarv") }}
-            <figure>
-              <a href="https://www.slu.se/centrumbildningar-och-projekt/programmet-for-odlad-mangfald-pom/gront-kulturarv/om-gront-kulturarv/" title="Läs mer om Grönt Kulturarv" target="_blank">
-                <img src="/img/svg/kulturarv.svg">
-              </a>
-            </figure>
-          {{ /if }}
+        <figure>
+          <a href="https://www.slu.se/centrumbildningar-och-projekt/programmet-for-odlad-mangfald-pom/gront-kulturarv/om-gront-kulturarv/"
+            title="Läs mer om Grönt Kulturarv" target="_blank">
+            <img src="/img/svg/kulturarv.svg">
+          </a>
+        </figure>
+        {{ /if }}
       </dl>
 
       <footer>
-        <figure>
+        <!--<figure>
           <a href="https://hushallningssallskapet.se/forskning-utveckling/reko/" target="_blank" title="Läs mer om REKO-ringar">
             <img src="/img/svg/reko.svg">
           </a>
         </figure>
-        <p>
-        Handla av oss i <a href="https://www.facebook.com/groups/676367736170080" target="_blank" title="Besök Facebook-gruppen för REKO-ringen i Arvika">Arvika</a>, <a href="https://www.facebook.com/groups/456724534933412" target="_blank" title="Besök Facebook-gruppen för REKO-ringen i Årjäng">Årjäng</a> eller <a href="https://www.facebook.com/groups/124288634806869" target="_blank" title="Besök Facebook-gruppen för REKO-ringen i Karlstad">Karlstad</a> REKO-ringar. {{ if tags.includes("frö") }}Frön kan beställas via e-post och skickas med brev. Allt utsäde kommer från våra egna plantor på gården. {{ /if }}
+        <p>Handla av oss i <a href="https://www.facebook.com/groups/676367736170080" target="_blank" title="Besök Facebook-gruppen för REKO-ringen i Arvika">Arvika</a>, <a href="https://www.facebook.com/groups/456724534933412" target="_blank" title="Besök Facebook-gruppen för REKO-ringen i Årjäng">Årjäng</a> eller <a href="https://www.facebook.com/groups/124288634806869" target="_blank" title="Besök Facebook-gruppen för REKO-ringen i Karlstad">Karlstad</a> REKO-ringar.</a>
+        -->
+        <p>{{ if tags.includes("frö") }}Frön kan beställas via <a
+            href="mailto:jeremy@barlingshult.se?subject=Beställning%20av%20frön">e-post</a> och
+          skickas med brev. Allt utsäde kommer från våra
+          egna plantor på gården.{{ /if }}
         </p>
       </footer>
     </div>
