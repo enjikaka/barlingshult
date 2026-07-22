@@ -78,7 +78,10 @@ site.filter(
   (array, n) => (n < 0) ? array.slice(n) : array.slice(0, n),
 );
 
-site.filter("truncate", (value, length) => `${value.substring(0, length)}…`);
+site.filter("truncate", (value, length) => value.length > length ? `${value.substring(0, length).trimEnd()}…` : value);
+
+const svDateFormat = new Intl.DateTimeFormat('sv-SE', { dateStyle: 'long' });
+site.filter('humanDate', value => svDateFormat.format(new Date(value)));
 
 site.filter('latinPlantLogo', text => `/img/logo/${text.toLocaleLowerCase().split(' ').join('-')}.png`);
 
