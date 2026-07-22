@@ -1,3 +1,6 @@
 type: historic-sources
 layout: layouts/post.vto
 slug: historier
+metas:
+  description: "$ .post-body p"
+  image: "$ .post-body img attr(src)"

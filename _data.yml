@@ -1,0 +1,6 @@
+metas:
+  site: "=site.title"
+  title: "=title"
+  lang: sv
+  description: "=site.description"
+  image: /img/tabacktorpsfar-2026-07-20.jpg

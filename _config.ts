@@ -4,6 +4,8 @@ import date from "lume/plugins/date.ts";
 import postcss from "lume/plugins/postcss.ts";
 import terser from "lume/plugins/terser.ts";
 import feed from "lume/plugins/feed.ts";
+import metas from "lume/plugins/metas.ts";
+import sitemap from "lume/plugins/sitemap.ts";
 
 import slugifyUrls from "lume/plugins/slugify_urls.ts";
 
@@ -31,6 +33,27 @@ site.use(feed({
     description: "=excerpt",
   },
 }));
+
+site.use(metas());
+
+// Växter och djur saknar layout och visas bara inbäddade i arkivsidorna,
+// så deras fragmentsidor ska inte med i sitemapen.
+site.use(sitemap({
+  query: "type!=plants type!=animals",
+}));
+
+// Produkter och växter har name/sort i stället för title.
+// Ge dem en riktig titel i sina metataggar.
+site.preprocess([".md"], (pages) => {
+  for (const page of pages) {
+    if (page.data.name && !page.data.title) {
+      page.data.metas = {
+        ...page.data.metas,
+        title: `${page.data.name}${page.data.sort ? ` '${page.data.sort}'` : ''}`,
+      };
+    }
+  }
+});
 
 site.use(terser());
 site.add([".js"]);
@@ -179,7 +202,7 @@ site.filter('findImgSrc', text => {
     const img = document.querySelector('img');
 
     if (img) {
-      return img.getAttribute('src')?.replace('.jpg', '_60w.webp') ?? '';
+      return img.getAttribute('src') ?? '';
     }
   }
 
@@ -191,6 +214,32 @@ site.filter('findTextContent', text => {
   const document = parser.parseFromString(text, 'text/html');
 
   return document?.textContent ?? '';
+});
+
+site.filter('productJsonLd', (data) => {
+  const parser = new DOMParser();
+  const document = parser.parseFromString(data.content, 'text/html');
+  const src = document?.querySelector('img')?.getAttribute('src');
+
+  const availability = data.in_stock === true
+    ? 'InStock'
+    : data.in_stock === 'soon' ? 'PreOrder' : 'OutOfStock';
+
+  return JSON.stringify({
+    '@context': 'https://schema.org/',
+    '@type': 'Product',
+    name: `${data.name}${data.sort ? ` '${data.sort}'` : ''}`,
+    description: (document?.textContent ?? '').trim(),
+    image: src ? [site.url(src, true)] : undefined,
+    offers: {
+      '@type': 'Offer',
+      url: site.url(data.url, true),
+      availability: `https://schema.org/${availability}`,
+      priceCurrency: 'SEK',
+      price: data.price,
+      priceValidUntil: `${new Date().getFullYear()}-12-31`,
+    },
+  }, null, 2);
 });
 
 site.filter('baseHref', () => site.options.location.toString());

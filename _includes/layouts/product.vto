@@ -93,18 +93,5 @@ bodyClass: body-post
   </article>
 </section>
 <script type="application/ld+json">
-{
-  "@context": "https://schema.org/",
-  "@type": "Product",
-  "name": "{{ name }}{{ if sort }}'{{ sort }}'{{ /if }}",
-  "description": "{{ content |> findTextContent |> truncate(50) }}",
-  "image": ["{{ content |> findImgSrc }}"],
-  "offers": {
-    "@type": "Offer",
-    "availability": "https://schema.org/{{ if in_stock == true }}InStock{{ else }}OutOfStock{{ /if }}",
-    "priceCurrency": "SEK",
-    "price": "{{ price }}",
-    "priceValidUntil": "2022-12-31"
-  }
-}
+{{ it |> productJsonLd |> safe }}
 </script>

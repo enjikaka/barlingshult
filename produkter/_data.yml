@@ -1,2 +1,5 @@
 type: products
 layout: layouts/product.vto
+metas:
+  description: "$ .post-body p"
+  image: "$ .post-body img attr(src)"
