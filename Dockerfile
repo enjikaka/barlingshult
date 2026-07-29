@@ -1,4 +1,4 @@
-FROM denoland/deno:debian-2.8.1 AS builder
+FROM denoland/deno:debian-2.9.4 AS builder
 
 WORKDIR /app
 
@@ -8,7 +8,7 @@ RUN deno install --frozen
 COPY . .
 RUN deno task build
 
-FROM denoland/deno:alpine-2.8.1 AS runtime
+FROM denoland/deno:alpine-2.9.4 AS runtime
 
 WORKDIR /usr/app
 
